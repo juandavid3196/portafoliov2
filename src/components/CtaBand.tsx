@@ -30,10 +30,10 @@ export function CtaBand({
   return (
     <div
       className={`flex flex-wrap items-center justify-between gap-x-10 gap-y-7 bg-brand text-ivory ${
-        home ? 'rounded-2xl p-[clamp(32px,4vw,56px)]' : 'rounded-lg p-[clamp(20px,2.4vw,32px)]'
+        home ? 'rounded-2xl p-[clamp(32px,4vw,56px)]' : 'rounded-lg p-[clamp(26px,3.2vw,44px)]'
       }`}
     >
-      <div className={`flex flex-col ${home ? 'gap-3' : 'gap-2.5'}`}>
+      <div className={`flex flex-col ${home ? 'gap-3' : 'gap-3.5'}`}>
         <Eyebrow tone="onGreen">{eyebrow}</Eyebrow>
         <h2
           id={headingId}

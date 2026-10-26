@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { site } from '@/config/site';
 import { href, navKeys } from '@/i18n/config';
 import { getDictionary } from '@/i18n/server';
+import { ColombiaFlag } from './Logos';
 
 const linkCls = 'font-serif text-[17px] text-ink hover:text-brand';
 
@@ -33,7 +34,10 @@ export async function Footer() {
       </div>
       <div className="page-container flex flex-wrap justify-between gap-x-6 gap-y-2 pb-8 pt-0 font-sans text-[12px] uppercase tracking-[.12em] text-muted">
         <span>© 2026 {site.name}</span>
-        <span>{t.common.location}</span>
+        <span className="inline-flex items-center gap-2.5">
+          <ColombiaFlag className="h-[11px] w-[17px] flex-none" />
+          {t.common.location}
+        </span>
       </div>
     </footer>
   );

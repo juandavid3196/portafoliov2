@@ -23,3 +23,18 @@ export function BosviaMark({ className = '' }: { className?: string }) {
     </svg>
   );
 }
+
+// Colombia flag (yellow ½, blue ¼, red ¼). SVG because flag emoji do not render on Windows.
+export function ColombiaFlag({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 16"
+      className={`rounded-[2px] ring-1 ring-black/10 ${className}`}
+      aria-hidden="true"
+    >
+      <rect width="24" height="8" fill="#fcd116" />
+      <rect y="8" width="24" height="4" fill="#003893" />
+      <rect y="12" width="24" height="4" fill="#ce1126" />
+    </svg>
+  );
+}
