@@ -1,4 +1,6 @@
 type MountainArtProps = {
+  // 'sage' (default) or the cooler 'teal' used on the skills page.
+  tone?: 'sage' | 'teal';
   // Adds the small pine row along the base (Outside the screen).
   trees?: boolean;
   className?: string;
@@ -13,21 +15,27 @@ const hatches =
 
 const pines = [6, 20, 34, 50, 64, 80, 96, 112, 356, 372, 388, 536, 552, 568, 586, 602, 620];
 
-export function MountainArt({ trees = false, className = '' }: MountainArtProps) {
+const tones = {
+  sage: { back: '#a6bbab', front: '#c3d2c7' },
+  teal: { back: '#8fbcc8', front: '#b4d3db' },
+} as const;
+
+export function MountainArt({ trees = false, tone = 'sage', className = '' }: MountainArtProps) {
+  const c = tones[tone];
   return (
     <svg
       viewBox="0 0 640 130"
       preserveAspectRatio="none"
       fill="none"
-      stroke="#a6bbab"
+      stroke={c.back}
       strokeWidth="1"
       strokeLinejoin="round"
       aria-hidden="true"
       className={className}
     >
       <path d={back} />
-      <path d={front} stroke="#c3d2c7" />
-      <path d={hatches} stroke="#c3d2c7" />
+      <path d={front} stroke={c.front} />
+      <path d={hatches} stroke={c.front} />
       {trees
         ? pines.map((x, i) => {
             const h = 22 + ((i * 7) % 12);

@@ -29,7 +29,7 @@ export const es: Dictionary = {
     text: 'La página que buscas no existe o se movió.',
     back: 'Volver al inicio',
   },
-  nav: ['Trabajo', 'Sobre mí', 'Servicios', 'Enfoque', 'Contacto'],
+  nav: ['Trabajo', 'Sobre mí', 'Habilidades', 'Servicios', 'Enfoque', 'Contacto'],
   titles: {
     home: '',
     work: 'Trabajo',
@@ -37,6 +37,7 @@ export const es: Dictionary = {
     bosvia: 'Bosvia',
     logit: 'Logit',
     about: 'Sobre mí',
+    skills: 'Habilidades',
     services: 'Servicios',
     approach: 'Enfoque',
     contact: 'Contacto',
@@ -87,6 +88,7 @@ export const es: Dictionary = {
     ctaSecondary: 'Ver trabajo seleccionado',
   },
   skills: {
+    exploreProjects: 'Explora mis proyectos',
     eyebrow: 'Habilidades',
     h: {
       l1: 'Un conjunto de herramientas.',
@@ -590,7 +592,7 @@ export const es: Dictionary = {
             t: 'Roles y permisos',
           },
           {
-            ic: 'route',
+            ic: 'database',
             t: 'APIs y datos conectados',
           },
         ],
@@ -602,11 +604,11 @@ export const es: Dictionary = {
         d: 'Experiencias claras y responsive que hacen más fácil entender y completar tareas complejas.',
         g: [
           {
-            ic: 'window',
+            ic: 'smartphone',
             t: 'Pantallas y formularios responsive',
           },
           {
-            ic: 'user',
+            ic: 'accessibility',
             t: 'Interacciones accesibles',
           },
           {
@@ -626,11 +628,11 @@ export const es: Dictionary = {
             t: 'Alcance y prioridades del MVP',
           },
           {
-            ic: 'route',
+            ic: 'network',
             t: 'Flujos de interfaz y arquitectura',
           },
           {
-            ic: 'chart',
+            ic: 'growth',
             t: 'Implementación incremental',
           },
         ],
@@ -642,7 +644,7 @@ export const es: Dictionary = {
         d: 'Componentes reutilizables y reglas visuales compartidas para que tu producto se mantenga consistente.',
         g: [
           {
-            ic: 'pen',
+            ic: 'palette',
             t: 'Design tokens y estilos',
           },
           {

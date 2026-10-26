@@ -30,7 +30,7 @@ export function CtaBand({
   return (
     <div
       className={`flex flex-wrap items-center justify-between gap-x-10 gap-y-7 bg-brand text-ivory ${
-        home ? 'rounded-2xl p-[clamp(32px,4vw,56px)]' : 'rounded-[14px] p-[clamp(28px,4vw,48px)]'
+        home ? 'rounded-2xl p-[clamp(32px,4vw,56px)]' : 'rounded-lg p-[clamp(20px,2.4vw,32px)]'
       }`}
     >
       <div className={`flex flex-col ${home ? 'gap-3' : 'gap-2.5'}`}>
@@ -38,7 +38,7 @@ export function CtaBand({
         <h2
           id={headingId}
           className={`m-0 font-sans font-bold leading-none tracking-[-.04em] text-ivory ${
-            home ? 'text-[clamp(34px,4.4vw,58px)]' : 'text-[clamp(30px,4vw,52px)]'
+            home ? 'text-[clamp(34px,4.4vw,58px)]' : 'text-[clamp(30px,4.7vw,66px)]'
           }`}
         >
           {title}

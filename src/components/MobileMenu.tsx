@@ -38,7 +38,7 @@ export function MobileMenu({ locale, items, menuLabel, navLabel, languageLabel }
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className="flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full border border-line bg-white px-3.5 font-sans text-[14px] text-ink min-[920px]:hidden"
+        className="flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full border border-line bg-white px-3.5 font-sans text-[14px] text-ink min-[1080px]:hidden"
       >
         <Icon name={open ? 'x' : 'menu'} size={18} strokeWidth={1.6} />
         {menuLabel}
@@ -48,7 +48,7 @@ export function MobileMenu({ locale, items, menuLabel, navLabel, languageLabel }
         <nav
           id="mobile-menu"
           aria-label={navLabel}
-          className="gutter-x absolute inset-x-0 top-full flex flex-col border-t border-line bg-ivory pb-6 pt-3 shadow-[0_24px_32px_-28px_rgba(20,40,35,.35)] min-[920px]:hidden"
+          className="gutter-x absolute inset-x-0 top-full flex flex-col border-t border-line bg-ivory pb-6 pt-3 shadow-[0_24px_32px_-28px_rgba(20,40,35,.35)] min-[1080px]:hidden"
         >
           {items.map((item, i) => {
             const active = isActive(pathname, item.href);

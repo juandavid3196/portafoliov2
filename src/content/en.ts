@@ -27,7 +27,7 @@ export const en = {
     text: 'The page you’re looking for doesn’t exist or has moved.',
     back: 'Back to home',
   },
-  nav: ['Work', 'About', 'Services', 'Approach', 'Contact'],
+  nav: ['Work', 'About', 'Skills', 'Services', 'Approach', 'Contact'],
   titles: {
     home: '',
     work: 'Work',
@@ -35,6 +35,7 @@ export const en = {
     bosvia: 'Bosvia',
     logit: 'Logit',
     about: 'About',
+    skills: 'Skills',
     services: 'Services',
     approach: 'Approach',
     contact: 'Contact',
@@ -85,6 +86,7 @@ export const en = {
     ctaSecondary: 'View selected work',
   },
   skills: {
+    exploreProjects: 'Explore my projects',
     eyebrow: 'Skill set',
     h: {
       l1: 'A toolkit.',
@@ -588,7 +590,7 @@ export const en = {
             t: 'User roles & permissions',
           },
           {
-            ic: 'route',
+            ic: 'database',
             t: 'Connected APIs & data',
           },
         ],
@@ -600,11 +602,11 @@ export const en = {
         d: 'Clear, responsive experiences that make complex tasks easier to understand and complete.',
         g: [
           {
-            ic: 'window',
+            ic: 'smartphone',
             t: 'Responsive screens & forms',
           },
           {
-            ic: 'user',
+            ic: 'accessibility',
             t: 'Accessible interactions',
           },
           {
@@ -624,11 +626,11 @@ export const en = {
             t: 'MVP scope & priorities',
           },
           {
-            ic: 'route',
+            ic: 'network',
             t: 'Interface flows & architecture',
           },
           {
-            ic: 'chart',
+            ic: 'growth',
             t: 'Incremental implementation',
           },
         ],
@@ -640,7 +642,7 @@ export const en = {
         d: 'Reusable components and shared visual rules that keep your product consistent as it evolves.',
         g: [
           {
-            ic: 'pen',
+            ic: 'palette',
             t: 'Design tokens & styling',
           },
           {

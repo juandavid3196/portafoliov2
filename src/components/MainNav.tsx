@@ -13,7 +13,7 @@ export function MainNav({ locale, items, label, languageLabel }: MainNavProps) {
   const pathname = usePathname();
 
   return (
-    <nav aria-label={label} className="hidden items-center gap-[30px] min-[920px]:flex">
+    <nav aria-label={label} className="hidden items-center gap-[22px] whitespace-nowrap min-[1080px]:flex min-[1240px]:gap-[30px]">
       {items.map((item) => {
         const active = isActive(pathname, item.href);
         return (

@@ -22,6 +22,7 @@ export const routes = {
   bosvia: 'work/bosvia',
   logit: 'work/logit',
   about: 'about',
+  skills: 'skills',
   services: 'services',
   approach: 'approach',
   contact: 'contact',
@@ -29,7 +30,7 @@ export const routes = {
 
 export type RouteKey = keyof typeof routes;
 
-export const navKeys = ['work', 'about', 'services', 'approach', 'contact'] as const;
+export const navKeys = ['work', 'about', 'skills', 'services', 'approach', 'contact'] as const;
 
 export function href(locale: Locale, key: RouteKey): string {
   const segment = routes[key];
