@@ -1,70 +1,110 @@
-const nav = ['Operations', 'Orders', 'Shipments', 'Customs', 'Suppliers'];
+import { Bell, ChartColumn, ClipboardList, LayoutGrid, Package, ScanLine, Search, Truck, Users } from 'lucide-react';
+import { MockFrame } from './MockFrame';
 
-const orders = [
-  { ref: 'PO-0001', origin: 'Sample A', status: 'In transit', tone: 'bg-sky' },
-  { ref: 'PO-0002', origin: 'Sample B', status: 'Customs', tone: 'bg-peach' },
-  { ref: 'PO-0003', origin: 'Sample C', status: 'Arrived', tone: 'bg-sage' },
-  { ref: 'PO-0004', origin: 'Sample D', status: 'In process', tone: 'bg-lavender' },
+const nav = [
+  { icon: LayoutGrid, label: 'Operations' },
+  { icon: ClipboardList, label: 'Purchase orders', active: true },
+  { icon: Truck, label: 'Shipments' },
+  { icon: ScanLine, label: 'Customs' },
+  { icon: Users, label: 'Suppliers' },
+  { icon: ChartColumn, label: 'Reports' },
 ];
 
-// Illustrative UI only: Logit is a company product and no real data is shown.
-export function MockLogit({ badge }: { badge: string }) {
-  return (
-    <div
-      role="img"
-      aria-label={`Logit — ${badge}`}
-      className="relative grid w-full grid-cols-1 overflow-hidden min-[480px]:grid-cols-[118px_minmax(0,1fr)] rounded-[14px] border border-[#dde2dc] bg-white font-sans text-ink shadow-[0_24px_48px_-28px_rgba(20,40,35,.35),0_2px_6px_rgba(20,40,35,.06)]"
-    >
-      <div className="hidden flex-col gap-1 border-r border-[#ecefea] px-2.5 py-3.5 text-[10.5px] text-ink-4 min-[480px]:flex">
-        <div className="px-1.5 pb-3 text-[13px] font-bold text-ink">Platform</div>
-        {nav.map((item) => (
-          <div
-            key={item}
-            className={`px-2 py-1.5 ${item === 'Orders' ? 'rounded-md bg-sage font-semibold text-brand' : ''}`}
-          >
-            {item}
-          </div>
-        ))}
-      </div>
+const status = {
+  'In transit': 'bg-[#dcebfb] text-[#2b6cb0]',
+  Customs: 'bg-[#fbe9d8] text-[#b7701f]',
+  Arrived: 'bg-[#d5f0e1] text-[#1f7a4d]',
+  'In process': 'bg-[#e3eefb] text-[#3b6fb0]',
+} as const;
 
-      <div className="min-w-0 px-4 py-3.5">
-        <div className="mb-2.5 flex items-center justify-between gap-2">
-          <div className="text-[15px] font-bold">Purchase orders</div>
-          <span className="rounded-md bg-brand px-2 py-1 text-[10px] text-white">+ New order</span>
-        </div>
-        <div className="mb-1 flex gap-3.5 border-b border-[#ecefea] pb-1.5 text-[10px] text-muted">
-          <span className="font-semibold text-brand">All</span>
-          <span>In process</span>
-          <span>Arrived</span>
-        </div>
-        <div className="grid grid-cols-[1.2fr_1fr_.9fr] text-[10px]">
-          {['Reference', 'Origin', 'Status'].map((h) => (
-            <div key={h} className="border-b border-[#f1f3ef] py-[7px] text-muted">
-              {h}
+const orders: { po: string; supplier: string; country: string; status: keyof typeof status }[] = [
+  { po: 'PO-2025-001', supplier: 'Global Textiles', country: 'China', status: 'In transit' },
+  { po: 'PO-2025-002', supplier: 'Andina Parts', country: 'United States', status: 'Customs' },
+  { po: 'PO-2025-003', supplier: 'EuroChem', country: 'Germany', status: 'Arrived' },
+  { po: 'PO-2025-004', supplier: 'Pacific Steel', country: 'Brazil', status: 'In process' },
+  { po: 'PO-2025-005', supplier: 'IndusMetals', country: 'China', status: 'In transit' },
+];
+
+const tabs = ['All', 'In process', 'Arrived', 'Closed'];
+
+// Illustrative UI only: Logit is a company product and no real data is shown.
+export function MockLogit({ badge, tilt }: { badge: string; tilt?: 'soft' | 'strong' }) {
+  return (
+    <MockFrame label={`Logit — ${badge}`} badge={badge} natural={540} tilt={tilt}>
+      <div className="grid grid-cols-[13.6em_minmax(0,1fr)]">
+        <div className="flex flex-col gap-[.5em] border-r border-[#edf0ec] px-[1.1em] pb-[4em] pt-[1.5em] text-[1.1em] text-ink-4">
+          <div className="mb-[1.4em] flex items-center gap-[.7em] px-[.4em] text-[1.35em] font-bold text-ink">
+            <Package size="1.5em" strokeWidth={2.2} className="text-[#2f6fda]" />
+            Logit
+          </div>
+          {nav.map(({ icon: Icon, label, active }) => (
+            <div
+              key={label}
+              className={`flex items-center gap-[.8em] rounded-[.8em] px-[.8em] py-[.7em] ${
+                active ? 'bg-[#d9efe3] font-semibold text-brand' : ''
+              }`}
+            >
+              <Icon size="1.4em" strokeWidth={1.5} />
+              {label}
             </div>
           ))}
-          {orders.map((o, i) => {
-            const rule = i === orders.length - 1 ? '' : 'border-b border-[#f1f3ef]';
-            return <Cells key={o.ref} rule={rule} order={o} />;
-          })}
+        </div>
+
+        <div className="min-w-0 pb-[3.4em]">
+          <div className="flex items-center justify-between gap-[1.2em] px-[1.8em] py-[1.2em]">
+            <div className="flex h-[3.2em] w-[52%] items-center gap-[.7em] rounded-[1em] bg-[#f3f5f2] px-[1.1em] text-[1em] text-[#8f978f]">
+              <Search size="1.2em" strokeWidth={1.6} />
+              Search purchase orders…
+            </div>
+            <div className="flex items-center gap-[1.2em]">
+              <Bell size="1.6em" strokeWidth={1.5} />
+              <span className="grid size-[3em] place-items-center rounded-full bg-brand text-[1em] text-white">JD</span>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between gap-[1em] px-[1.8em]">
+            <div className="text-[1.9em] font-bold leading-none">Purchase orders</div>
+            <span className="rounded-[.8em] bg-brand px-[1.4em] py-[.7em] text-[1.1em] font-medium text-white">
+              + New order
+            </span>
+          </div>
+
+          <div className="mt-[1.4em] flex gap-[1.8em] border-b border-[#edf0ec] px-[1.8em] text-[1.05em] text-muted">
+            {tabs.map((tab, i) => (
+              <span
+                key={tab}
+                className={`pb-[.7em] ${i === 0 ? '-mb-px border-b-2 border-brand font-semibold text-ink' : ''}`}
+              >
+                {tab}
+              </span>
+            ))}
+          </div>
+
+          <div className="px-[1.8em] text-[1.05em]">
+            <div className="grid grid-cols-[1.35fr_1.35fr_1.1fr_1fr] border-b border-[#edf0ec] py-[.9em] font-semibold text-ink-4">
+              <span>PO number</span>
+              <span>Supplier</span>
+              <span>Country</span>
+              <span>Status</span>
+            </div>
+            {orders.map((o, i) => (
+              <div
+                key={o.po}
+                className={`grid grid-cols-[1.35fr_1.35fr_1.1fr_1fr] items-center py-[.95em] ${
+                  i < orders.length - 1 ? 'border-b border-[#f1f3ef]' : ''
+                }`}
+              >
+                <span>{o.po}</span>
+                <span className="text-ink-4">{o.supplier}</span>
+                <span className="text-ink-4">{o.country}</span>
+                <span>
+                  <span className={`rounded-full px-[.9em] py-[.3em] text-[.95em] ${status[o.status]}`}>{o.status}</span>
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-
-      <span className="absolute bottom-2.5 right-2.5 rounded-full border border-line bg-[rgba(248,246,241,.92)] px-[9px] py-[3px] text-[9.5px] uppercase tracking-[.08em] text-muted">
-        {badge}
-      </span>
-    </div>
-  );
-}
-
-function Cells({ rule, order }: { rule: string; order: (typeof orders)[number] }) {
-  return (
-    <>
-      <div className={`py-[7px] ${rule}`}>{order.ref}</div>
-      <div className={`py-[7px] ${rule}`}>{order.origin}</div>
-      <div className={`py-[5px] ${rule}`}>
-        <span className={`rounded px-1.5 py-0.5 ${order.tone}`}>{order.status}</span>
-      </div>
-    </>
+    </MockFrame>
   );
 }

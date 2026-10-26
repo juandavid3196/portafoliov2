@@ -37,7 +37,7 @@ export default async function FieldOpsPage() {
               as="h1"
               id="fo-h"
               h={f.h}
-              className="text-[clamp(44px,6vw,84px)] leading-[.98] tracking-[-.045em]"
+              className="text-[clamp(36px,4.25vw,66px)] leading-[.98] tracking-[-.045em]"
             />
             <p className="m-0 max-w-[640px] text-pretty font-serif text-[clamp(19px,1.7vw,23px)] leading-[1.42] text-ink-4">
               {f.lead}

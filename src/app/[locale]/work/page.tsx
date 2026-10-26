@@ -3,6 +3,7 @@ import { ButtonLink } from '@/components/Button';
 import { DisplayHeading } from '@/components/DisplayHeading';
 import { EyebrowRule } from '@/components/Eyebrow';
 import { Icon } from '@/components/Icon';
+import { BosviaMark } from '@/components/Logos';
 import { MockBosvia } from '@/components/mockups/MockBosvia';
 import { MockFieldOps } from '@/components/mockups/MockFieldOps';
 import { MockLogit } from '@/components/mockups/MockLogit';
@@ -23,19 +24,19 @@ export default async function WorkPage() {
   const { fieldops, logit, bosvia } = t.projects;
 
   return (
-    <section aria-labelledby="w-h" className="page-container pt-[clamp(40px,6vw,80px)]">
+    <section aria-labelledby="w-h" className="page-container pt-[clamp(20px,2.2vw,28px)]">
       <EyebrowRule>{t.work.eyebrow}</EyebrowRule>
       <DisplayHeading
         as="h1"
         id="w-h"
         h={t.work.h}
-        className="text-[clamp(42px,6vw,82px)] leading-[.98] tracking-[-.045em]"
+        className="text-[clamp(36px,4.25vw,66px)] leading-[.98] tracking-[-.045em]"
       />
-      <p className="m-0 mt-[18px] font-serif text-[clamp(19px,1.7vw,23px)] text-muted">{t.work.sub}</p>
+      <p className="m-0 mt-3 font-serif text-[clamp(19px,1.85vw,24px)] text-ink-4">{t.work.sub}</p>
 
       {/* FieldOps */}
-      <article className="mt-11 flex flex-wrap items-center gap-x-12 gap-y-9 rounded-3xl bg-sky p-[clamp(24px,3.4vw,44px)]">
-        <div className="flex max-w-[400px] flex-[1_1_300px] flex-col gap-5">
+      <article className="mt-7 flex flex-wrap items-center gap-x-9 gap-y-9 rounded-[28px] bg-sky p-[clamp(20px,2.3vw,30px)]">
+        <div className="flex max-w-[385px] flex-[0_1_385px] flex-col gap-5">
           <div className="flex flex-wrap items-center gap-3 font-sans text-[13px]">
             <span className="inline-flex items-center gap-2 rounded-full bg-[#dcebdf] px-3.5 py-[7px] font-medium text-brand">
               <Icon name="box" size={15} strokeWidth={1.6} />
@@ -64,15 +65,15 @@ export default async function WorkPage() {
             </TextLink>
           </div>
         </div>
-        <div className="min-w-0 flex-[2_1_460px]">
+        <div className="min-w-0 flex-[1_1_480px]">
           <MockFieldOps badge={t.mock.illustrative} />
         </div>
       </article>
 
       <div className="mt-5 grid grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] gap-5">
         {/* Logit */}
-        <article className="flex flex-wrap items-center gap-7 rounded-3xl bg-sky p-[clamp(24px,3vw,36px)]">
-          <div className="flex flex-[1_1_200px] flex-col gap-4">
+        <article className="flex flex-wrap items-center gap-x-3 gap-y-7 rounded-[28px] bg-sky p-[clamp(20px,2.3vw,30px)] min-[900px]:pr-[18px]">
+          <div className="flex flex-[0_0_205px] flex-col gap-4">
             <span className="inline-flex items-center gap-2 self-start rounded-full bg-[#d7e7f5] px-3.5 py-[7px] font-sans text-[13px] font-medium text-brand">
               <Icon name="file" size={15} strokeWidth={1.6} />
               {t.common.professional}
@@ -87,14 +88,14 @@ export default async function WorkPage() {
               {t.common.caseStudy} ↗
             </ButtonLink>
           </div>
-          <div className="min-w-0 flex-[1.4_1_280px]">
-            <MockLogit badge={t.mock.notReal} />
+          <div className="min-w-0 flex-[1_1_300px] min-[900px]:-mr-1">
+            <MockLogit badge={t.mock.notReal} tilt="soft" />
           </div>
         </article>
 
         {/* Bosvia */}
-        <article className="flex flex-wrap items-center gap-7 rounded-3xl bg-peach p-[clamp(24px,3vw,36px)]">
-          <div className="flex flex-[1_1_200px] flex-col gap-4">
+        <article className="flex flex-wrap items-center gap-x-3 gap-y-7 rounded-[28px] bg-peach p-[clamp(20px,2.3vw,30px)] min-[900px]:pr-[18px]">
+          <div className="flex flex-[0_0_205px] flex-col gap-4">
             <div className="flex flex-wrap items-center gap-2.5">
               <span className="inline-flex items-center gap-2 rounded-full bg-[#f3dfcb] px-3.5 py-[7px] font-sans text-[13px] font-medium text-warm-accent">
                 <Icon name="chart" size={15} strokeWidth={1.6} />
@@ -105,7 +106,8 @@ export default async function WorkPage() {
                 {t.common.inDev}
               </span>
             </div>
-            <h2 className="m-0 font-serif text-[clamp(40px,3.8vw,54px)] font-normal leading-none tracking-[-.02em] text-brand">
+            <h2 className="m-0 flex items-end gap-3 font-serif text-[clamp(40px,3.8vw,54px)] font-normal leading-none tracking-[-.02em] text-[#14213d]">
+              <BosviaMark className="h-[1.15em] w-[1.3em] flex-none" />
               Bosvia
             </h2>
             <p className="m-0 font-serif text-[19px] leading-[1.4] text-ink-2">{bosvia.cat}</p>
@@ -114,8 +116,8 @@ export default async function WorkPage() {
               {t.common.discover}
             </TextLink>
           </div>
-          <div className="min-w-0 flex-[1.4_1_280px]">
-            <MockBosvia badge={t.mock.concept} />
+          <div className="min-w-0 flex-[1_1_300px] min-[900px]:-mr-1">
+            <MockBosvia badge={t.mock.concept} tilt="strong" />
           </div>
         </article>
       </div>

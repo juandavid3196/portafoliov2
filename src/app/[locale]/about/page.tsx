@@ -33,7 +33,7 @@ export default async function AboutPage() {
             as="h1"
             id="ab-h"
             h={a.h}
-            className="text-[clamp(42px,5.4vw,76px)] leading-[.98] tracking-[-.045em]"
+            className="text-[clamp(38px,4.3vw,64px)] leading-[.98] tracking-[-.045em]"
           />
           {a.paras.map((p) => (
             <p key={p} className="m-0 text-pretty font-serif text-[20px] leading-[1.5] text-ink-3">
@@ -137,7 +137,7 @@ export default async function AboutPage() {
           <DisplayHeading
             id="ab-b"
             h={a.bH}
-            className="text-balance text-[clamp(42px,5.4vw,80px)] leading-[.96] tracking-[-.045em]"
+            className="text-balance text-[clamp(38px,4.5vw,68px)] leading-[.96] tracking-[-.045em]"
           />
           <p className="m-0 font-serif text-[21px] text-ink-2">{a.bSub}</p>
           {a.bParas.map((p) => (

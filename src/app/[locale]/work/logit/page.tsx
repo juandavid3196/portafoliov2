@@ -30,7 +30,7 @@ export default async function LogitPage() {
               as="h1"
               id="lg-h"
               h={l.h}
-              className="text-[clamp(44px,5.6vw,80px)] leading-[.98] tracking-[-.045em]"
+              className="text-[clamp(36px,4.1vw,62px)] leading-[.98] tracking-[-.045em]"
             />
             <p className="m-0 text-pretty font-serif text-[clamp(19px,1.7vw,23px)] leading-[1.42] text-ink-4">
               {l.lead}

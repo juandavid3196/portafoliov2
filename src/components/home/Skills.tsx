@@ -16,7 +16,7 @@ export async function Skills() {
       <Eyebrow className="mb-4">{s.eyebrow}</Eyebrow>
       <h2
         id="hs-h"
-        className="m-0 font-sans text-[clamp(36px,4.6vw,62px)] font-bold leading-none tracking-[-.04em]"
+        className="m-0 font-sans text-[clamp(32px,3.7vw,52px)] font-bold leading-none tracking-[-.04em]"
       >
         <span className="block">{s.h.l1}</span>
         <span className="block">

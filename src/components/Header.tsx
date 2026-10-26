@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { site } from '@/config/site';
 import { href, navKeys } from '@/i18n/config';
 import { getDictionary } from '@/i18n/server';
+import { HeaderShell } from './HeaderShell';
 import { MainNav } from './MainNav';
 import { MobileMenu } from './MobileMenu';
 
@@ -10,7 +11,7 @@ export async function Header() {
   const items = navKeys.map((key, i) => ({ key, label: t.nav[i], href: href(locale, key) }));
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[rgba(213,218,211,.6)] bg-[rgba(248,246,241,.92)] backdrop-blur-[10px]">
+    <HeaderShell>
       <div className="page-container flex h-[76px] items-center justify-between gap-6">
         <Link
           href={href(locale, 'home')}
@@ -35,6 +36,6 @@ export async function Header() {
           languageLabel={t.common.language}
         />
       </div>
-    </header>
+    </HeaderShell>
   );
 }

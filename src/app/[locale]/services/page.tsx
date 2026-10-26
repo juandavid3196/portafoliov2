@@ -34,7 +34,7 @@ export default async function ServicesPage() {
             as="h1"
             id="sv-h"
             h={s.h}
-            className="text-[clamp(42px,6vw,84px)] leading-[.98] tracking-[-.045em]"
+            className="text-[clamp(36px,4.25vw,66px)] leading-[.98] tracking-[-.045em]"
           />
           <p className="m-0 border-l border-line-strong pl-5 font-sans text-[12px] uppercase leading-[1.9] tracking-[.18em] text-eyebrow">
             {s.side1}

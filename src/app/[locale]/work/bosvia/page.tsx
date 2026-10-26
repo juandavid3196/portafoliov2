@@ -32,7 +32,7 @@ export default async function BosviaPage() {
             <Eyebrow tone="warm">{b.eyebrow}</Eyebrow>
             <h1
               id="bv-h"
-              className="m-0 font-sans text-[clamp(44px,5.6vw,80px)] font-bold leading-[.98] tracking-[-.045em]"
+              className="m-0 font-sans text-[clamp(36px,4.1vw,62px)] font-bold leading-[.98] tracking-[-.045em]"
             >
               <span className="block font-serif font-normal tracking-[-.03em] text-brand">{b.h.l1}</span>
               <span className="block">

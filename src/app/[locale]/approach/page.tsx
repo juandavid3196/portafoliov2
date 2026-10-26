@@ -26,7 +26,7 @@ export default async function ApproachPage() {
           as="h1"
           id="ap-h"
           h={a.h}
-          className="text-[clamp(42px,6vw,84px)] leading-[.98] tracking-[-.045em]"
+          className="text-[clamp(36px,4.25vw,66px)] leading-[.98] tracking-[-.045em]"
         />
         <p className="m-0 border-l border-line-strong pl-5 font-sans text-[12px] uppercase leading-[1.9] tracking-[.18em] text-eyebrow">
           {a.side1}

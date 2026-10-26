@@ -23,7 +23,7 @@ export async function SelectedWork() {
       <div className="mb-9 flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
         <h2
           id="hw-h"
-          className="m-0 font-sans text-[clamp(36px,4.6vw,62px)] font-bold leading-none tracking-[-.04em]"
+          className="m-0 font-sans text-[clamp(32px,3.7vw,52px)] font-bold leading-none tracking-[-.04em]"
         >
           {t.home.workTitle}
         </h2>
