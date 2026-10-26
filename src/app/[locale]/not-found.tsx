@@ -6,12 +6,12 @@ export default async function NotFound() {
   const { locale, t } = await getDictionary();
 
   return (
-    <section className="page-container flex flex-col items-start gap-5 pt-[clamp(64px,10vw,140px)]">
+    <section className="page-container flex flex-col items-start gap-5 pt-[clamp(64px,10vw,116px)]">
       <p className="m-0 font-serif text-[22px] text-brand">404</p>
-      <h1 className="m-0 font-sans text-[clamp(36px,4.25vw,66px)] font-bold leading-[.98] tracking-[-.045em]">
+      <h1 className="m-0 font-sans text-[clamp(36px,4.25vw,49px)] font-bold leading-[.98] tracking-[-.045em]">
         {t.notFound.title}
       </h1>
-      <p className="m-0 max-w-[560px] font-serif text-[clamp(19px,1.7vw,23px)] leading-[1.42] text-ink-4">
+      <p className="m-0 max-w-[560px] font-serif text-[clamp(19px,1.7vw,20px)] leading-[1.42] text-ink-4">
         {t.notFound.text}
       </p>
       <ButtonLink href={href(locale, 'home')} size="hero">

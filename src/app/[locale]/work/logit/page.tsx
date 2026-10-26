@@ -21,23 +21,23 @@ export default async function LogitPage() {
 
   return (
     <article aria-labelledby="lg-h">
-      <div className="page-container pt-[clamp(32px,5vw,64px)]">
+      <div className="page-container pt-[clamp(32px,5vw,58px)]">
         <BackLink href={href(locale, 'work')}>{t.common.back}</BackLink>
-        <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] items-center gap-x-[clamp(40px,6vw,88px)] gap-y-10">
+        <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] items-center gap-x-[clamp(40px,6vw,70px)] gap-y-10">
           <div className="flex flex-col gap-[22px]">
             <Eyebrow>{l.eyebrow}</Eyebrow>
             <DisplayHeading
               as="h1"
               id="lg-h"
               h={l.h}
-              className="text-[clamp(36px,4.1vw,62px)] leading-[.98] tracking-[-.045em]"
+              className="text-[clamp(36px,4.1vw,48px)] leading-[.98] tracking-[-.045em]"
             />
-            <p className="m-0 text-pretty font-serif text-[clamp(19px,1.7vw,23px)] leading-[1.42] text-ink-4">
+            <p className="m-0 text-pretty font-serif text-[clamp(19px,1.7vw,20px)] leading-[1.42] text-ink-4">
               {l.lead}
             </p>
             <p className="m-0 font-sans text-[14px] tracking-[.06em] text-eyebrow">{t.projects.logit.stack}</p>
           </div>
-          <div className="rounded-3xl bg-sky p-[clamp(18px,3vw,36px)]">
+          <div className="rounded-3xl bg-sky p-[clamp(18px,3vw,35px)]">
             <MockLogit badge={t.mock.notReal} />
           </div>
         </div>
@@ -48,12 +48,12 @@ export default async function LogitPage() {
         </p>
       </div>
 
-      <section aria-labelledby="lg-c" className="page-container pt-[clamp(64px,8vw,112px)]">
+      <section aria-labelledby="lg-c" className="page-container pt-[clamp(64px,8vw,93px)]">
         <Eyebrow className="mb-4">{l.contribEyebrow}</Eyebrow>
         <DisplayHeading
           id="lg-c"
           h={l.contribH}
-          className="mb-9 text-[clamp(32px,3.4vw,46px)] leading-[1.04] tracking-[-.04em]"
+          className="mb-9 text-[clamp(32px,3.4vw,39px)] leading-[1.04] tracking-[-.04em]"
         />
         <ul className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-x-12 p-0">
           {l.contrib.map((c, i) => (
@@ -68,7 +68,7 @@ export default async function LogitPage() {
         </ul>
       </section>
 
-      <section className="page-container pt-[clamp(56px,7vw,96px)]">
+      <section className="page-container pt-[clamp(56px,7vw,81px)]">
         <NextProject href={href(locale, 'bosvia')} label={t.common.next} name="Bosvia" serif />
       </section>
     </article>

@@ -17,13 +17,13 @@ export async function SelectedWork() {
   return (
     <section
       aria-labelledby="hw-h"
-      className="page-container pt-[clamp(64px,8vw,112px)]"
+      className="page-container pt-[clamp(64px,8vw,93px)]"
     >
       <EyebrowRule>{t.home.workEyebrow}</EyebrowRule>
       <div className="mb-9 flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
         <h2
           id="hw-h"
-          className="m-0 font-sans text-[clamp(32px,3.7vw,52px)] font-bold leading-none tracking-[-.04em]"
+          className="m-0 font-sans text-[clamp(32px,3.7vw,43px)] font-bold leading-none tracking-[-.04em]"
         >
           {t.home.workTitle}
         </h2>
@@ -31,7 +31,7 @@ export async function SelectedWork() {
       </div>
 
       {/* FieldOps — feature card */}
-      <article className="flex flex-wrap items-center gap-x-12 gap-y-9 rounded-[20px] bg-sage p-[clamp(24px,3.4vw,44px)]">
+      <article className="flex flex-wrap items-center gap-x-12 gap-y-9 rounded-[20px] bg-sage p-[clamp(24px,3.4vw,39px)]">
         <div className="flex max-w-[420px] flex-[1_1_300px] flex-col gap-5">
           <div className="flex flex-wrap items-center gap-2.5 font-sans text-[13px]">
             <span className="rounded-full bg-ivory px-3.5 py-1.5 font-medium text-brand">{t.common.independent}</span>
@@ -41,7 +41,7 @@ export async function SelectedWork() {
             </span>
           </div>
           <div>
-            <h3 className="m-0 font-sans text-[clamp(36px,3.8vw,52px)] font-bold leading-none tracking-[-.04em]">
+            <h3 className="m-0 font-sans text-[clamp(36px,3.8vw,44px)] font-bold leading-none tracking-[-.04em]">
               FieldOps
             </h3>
             <p className="m-0 mt-2 font-serif text-[20px] text-ink-2">{fieldops.cat}</p>
@@ -64,13 +64,13 @@ export async function SelectedWork() {
 
       <div className="mt-5 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] gap-5">
         {/* Logit */}
-        <article className="flex flex-col gap-6 rounded-[20px] bg-sky p-[clamp(24px,3vw,36px)]">
+        <article className="flex flex-col gap-6 rounded-[20px] bg-sky p-[clamp(24px,3vw,35px)]">
           <div className="flex items-start justify-between gap-4">
             <div>
               <span className="inline-block rounded-full bg-ivory px-3.5 py-1.5 font-sans text-[13px] font-medium text-brand">
                 {t.common.professional}
               </span>
-              <h3 className="m-0 mt-4 font-sans text-[clamp(32px,3vw,42px)] font-bold leading-none tracking-[-.04em]">
+              <h3 className="m-0 mt-4 font-sans text-[clamp(32px,3vw,35px)] font-bold leading-none tracking-[-.04em]">
                 Logit
               </h3>
               <p className="m-0 mt-1.5 font-serif text-[19px] text-ink-2">{logit.cat}</p>
@@ -90,7 +90,7 @@ export async function SelectedWork() {
         </article>
 
         {/* Bosvia */}
-        <article className="flex flex-col gap-6 rounded-[20px] bg-peach p-[clamp(24px,3vw,36px)]">
+        <article className="flex flex-col gap-6 rounded-[20px] bg-peach p-[clamp(24px,3vw,35px)]">
           <div className="flex items-start justify-between gap-4">
             <div>
               <div className="flex flex-wrap items-center gap-2.5">
@@ -102,7 +102,7 @@ export async function SelectedWork() {
                   {t.common.concept}
                 </span>
               </div>
-              <h3 className="m-0 mt-4 font-serif text-[clamp(36px,3.4vw,48px)] font-normal leading-none tracking-[-.02em] text-brand">
+              <h3 className="m-0 mt-4 font-serif text-[clamp(36px,3.4vw,39px)] font-normal leading-none tracking-[-.02em] text-brand">
                 Bosvia
               </h3>
               <p className="m-0 mt-1.5 font-serif text-[19px] text-ink-2">{bosvia.cat}</p>

@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/work/fie
   return buildMetadata(locale, 'fieldops', dictionaries[locale].fieldops.lead);
 }
 
-const h2 = 'text-[clamp(32px,3.4vw,46px)] leading-[1.04] tracking-[-.04em]';
-const section = 'page-container pt-[clamp(64px,8vw,112px)]';
+const h2 = 'text-[clamp(32px,3.4vw,39px)] leading-[1.04] tracking-[-.04em]';
+const section = 'page-container pt-[clamp(64px,8vw,93px)]';
 
 export default async function FieldOpsPage() {
   const { locale, t } = await getDictionary();
@@ -28,18 +28,18 @@ export default async function FieldOpsPage() {
 
   return (
     <article aria-labelledby="fo-h">
-      <div className="page-container pt-[clamp(32px,5vw,64px)]">
+      <div className="page-container pt-[clamp(32px,5vw,58px)]">
         <BackLink href={href(locale, 'work')}>{t.common.back}</BackLink>
-        <div className="mt-4 flex flex-wrap items-end gap-x-[clamp(40px,6vw,96px)] gap-y-8">
+        <div className="mt-4 flex flex-wrap items-end gap-x-[clamp(40px,6vw,70px)] gap-y-8">
           <div className="flex flex-[1_1_520px] flex-col gap-[22px]">
             <Eyebrow>{f.eyebrow}</Eyebrow>
             <DisplayHeading
               as="h1"
               id="fo-h"
               h={f.h}
-              className="text-[clamp(36px,4.25vw,66px)] leading-[.98] tracking-[-.045em]"
+              className="text-[clamp(36px,4.25vw,49px)] leading-[.98] tracking-[-.045em]"
             />
-            <p className="m-0 max-w-[640px] text-pretty font-serif text-[clamp(19px,1.7vw,23px)] leading-[1.42] text-ink-4">
+            <p className="m-0 max-w-[640px] text-pretty font-serif text-[clamp(19px,1.7vw,20px)] leading-[1.42] text-ink-4">
               {f.lead}
             </p>
           </div>
@@ -75,8 +75,8 @@ export default async function FieldOpsPage() {
         </div>
       </div>
 
-      <div className="page-container mt-[clamp(40px,5vw,64px)]">
-        <div className="rounded-3xl bg-sky p-[clamp(20px,4vw,56px)]">
+      <div className="page-container mt-[clamp(40px,5vw,58px)]">
+        <div className="rounded-3xl bg-sky p-[clamp(20px,4vw,46px)]">
           <div className="mx-auto max-w-[980px]">
             <MockFieldOps badge={t.mock.illustrative} />
           </div>
@@ -86,7 +86,7 @@ export default async function FieldOpsPage() {
       {/* 01 · Problem */}
       <section
         aria-labelledby="fo-p"
-        className={`${section} grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-x-[clamp(40px,6vw,88px)] gap-y-10`}
+        className={`${section} grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-x-[clamp(40px,6vw,70px)] gap-y-10`}
       >
         <div className="flex flex-col gap-[18px]">
           <Eyebrow>01 · {f.problemEyebrow}</Eyebrow>
@@ -146,14 +146,14 @@ export default async function FieldOpsPage() {
       </section>
 
       {/* 04 · Access & structure */}
-      <section aria-labelledby="fo-a" className="page-container mt-[clamp(64px,8vw,112px)]">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,400px),1fr))] gap-x-16 gap-y-8 rounded-3xl bg-sage p-[clamp(28px,4vw,56px)]">
+      <section aria-labelledby="fo-a" className="page-container mt-[clamp(64px,8vw,93px)]">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,400px),1fr))] gap-x-16 gap-y-8 rounded-3xl bg-sage p-[clamp(28px,4vw,46px)]">
           <div className="flex flex-col gap-4">
             <Eyebrow>04 · {f.accessEyebrow}</Eyebrow>
             <DisplayHeading
               id="fo-a"
               h={f.accessH}
-              className="text-[clamp(30px,3vw,42px)] leading-[1.04] tracking-[-.04em]"
+              className="text-[clamp(30px,3vw,35px)] leading-[1.04] tracking-[-.04em]"
             />
             <p className="m-0 font-serif text-[19px] leading-[1.5] text-ink-3">{f.access}</p>
           </div>
@@ -174,7 +174,7 @@ export default async function FieldOpsPage() {
       {/* 05 · Technical details (native accordion) */}
       <section
         aria-labelledby="fo-t"
-        className={`${section} grid grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] gap-x-[clamp(40px,6vw,88px)] gap-y-8`}
+        className={`${section} grid grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] gap-x-[clamp(40px,6vw,70px)] gap-y-8`}
       >
         <div className="flex flex-col gap-4">
           <Eyebrow>05 · {f.techEyebrow}</Eyebrow>
@@ -203,7 +203,7 @@ export default async function FieldOpsPage() {
       <section className={section}>
         <div className="flex flex-wrap gap-x-16 gap-y-6 border-t border-ink pt-8">
           <Eyebrow className="flex-[0_0_220px]">06 · {f.contribEyebrow}</Eyebrow>
-          <p className="m-0 flex-[1_1_420px] text-pretty font-serif text-[clamp(24px,2.6vw,34px)] leading-[1.3] text-ink">
+          <p className="m-0 flex-[1_1_420px] text-pretty font-serif text-[clamp(24px,2.6vw,30px)] leading-[1.3] text-ink">
             {f.contrib}
           </p>
         </div>

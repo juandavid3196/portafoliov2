@@ -28,14 +28,14 @@ export default async function ServicesPage() {
 
   return (
     <>
-      <section aria-labelledby="sv-h" className="page-container pt-[clamp(32px,4.2vw,60px)]">
+      <section aria-labelledby="sv-h" className="page-container pt-[clamp(32px,4.2vw,49px)]">
         <Eyebrow className="mb-5">{s.eyebrow}</Eyebrow>
         <div className="flex flex-wrap items-center justify-between gap-x-12 gap-y-6">
           <DisplayHeading
             as="h1"
             id="sv-h"
             h={s.h}
-            className="text-[clamp(40px,6.6vw,96px)] leading-[1.04] tracking-[-.045em]"
+            className="text-[clamp(36px,5vw,60px)] leading-[1.04] tracking-[-.045em]"
           />
           <p className="m-0 border-l border-line-strong pl-5 font-sans text-[12px] uppercase leading-[1.9] tracking-[.18em] text-eyebrow">
             {s.side1}
@@ -43,9 +43,9 @@ export default async function ServicesPage() {
             {s.side2}
           </p>
         </div>
-        <p className="m-0 mt-7 font-serif text-[clamp(19px,2.15vw,28px)] text-ink-4">{s.sub}</p>
+        <p className="m-0 mt-7 font-serif text-[clamp(19px,2.15vw,25px)] text-ink-4">{s.sub}</p>
 
-        <div className="mt-[clamp(40px,4.8vw,64px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] gap-5">
+        <div className="mt-[clamp(40px,4.8vw,56px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] gap-5">
           {s.cards.map((c, i) => (
             <article
               key={c.t}
@@ -58,7 +58,7 @@ export default async function ServicesPage() {
                 <span className="font-serif text-[18px] text-brand">{String(i + 1).padStart(2, '0')}</span>
               </div>
               <p className="m-0 mt-3 font-sans text-[12px] uppercase tracking-[.18em] text-eyebrow">{c.k}</p>
-              <h2 className="m-0 font-sans text-[clamp(24px,2.55vw,38px)] font-bold leading-[1.05] tracking-[-.045em]">
+              <h2 className="m-0 font-sans text-[clamp(24px,2.55vw,30px)] font-bold leading-[1.05] tracking-[-.045em]">
                 {c.t}
               </h2>
               <p className="m-0 font-serif text-[clamp(17px,1.95vw,23px)] leading-[1.28] text-ink-4">{c.d}</p>
@@ -81,12 +81,12 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      <section aria-labelledby="sv-p" className="page-container pt-[clamp(56px,6.5vw,96px)]">
+      <section aria-labelledby="sv-p" className="page-container pt-[clamp(56px,6.5vw,75px)]">
         <Eyebrow className="mb-5">{s.pEyebrow}</Eyebrow>
         <DisplayHeading
           id="sv-p"
           h={s.pH}
-          className="mb-10 text-[clamp(32px,5vw,70px)] leading-[1.04] tracking-[-.04em]"
+          className="mb-10 text-[clamp(32px,5vw,58px)] leading-[1.04] tracking-[-.04em]"
         />
         <ol className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-8 p-0">
           {s.process.map((step, i) => (
@@ -100,7 +100,7 @@ export default async function ServicesPage() {
             </li>
           ))}
         </ol>
-        <div className="mt-[clamp(44px,5.4vw,80px)]">
+        <div className="mt-[clamp(44px,5.4vw,63px)]">
           <CtaBand
             variant="services"
             eyebrow={t.home.ctaEyebrow}
@@ -112,7 +112,7 @@ export default async function ServicesPage() {
             secondaryHref={href(locale, 'work')}
           />
         </div>
-        <MountainArt className="pointer-events-none ml-auto mt-8 h-[clamp(56px,7vw,100px)] w-[min(62%,800px)] [-webkit-mask-image:linear-gradient(to_left,#000_45%,transparent)] [mask-image:linear-gradient(to_left,#000_45%,transparent)]" />
+        <MountainArt className="pointer-events-none ml-auto mt-8 h-[clamp(56px,7vw,81px)] w-[min(62%,800px)] [-webkit-mask-image:linear-gradient(to_left,#000_45%,transparent)] [mask-image:linear-gradient(to_left,#000_45%,transparent)]" />
       </section>
     </>
   );

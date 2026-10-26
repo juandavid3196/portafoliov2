@@ -40,7 +40,7 @@ export function ProcessRing({ steps, center, centerLines, aiChip, aiSteps }: Pro
   return (
     <>
       {/* ≥1120px: circular composition */}
-      <div className="relative mx-auto mt-[clamp(44px,5.4vw,80px)] hidden aspect-[1250/570] w-full max-w-[1270px] min-[1120px]:block">
+      <div className="relative mx-auto mt-[clamp(44px,5.4vw,63px)] hidden aspect-[1250/570] w-full max-w-[1270px] min-[1120px]:block">
         <svg
           viewBox={`0 0 ${BOX.w} ${BOX.h}`}
           preserveAspectRatio="none"
@@ -64,12 +64,12 @@ export function ProcessRing({ steps, center, centerLines, aiChip, aiSteps }: Pro
 
         <div className="absolute left-[33.4%] top-[14.9%] flex aspect-square w-[33%] flex-col items-center justify-center gap-3.5 rounded-full border border-dashed border-line-mid bg-ivory p-[5%] text-center">
           <Icon name="sprout" size={44} strokeWidth={1.2} className="text-brand" />
-          <h2 className="m-0 font-sans text-[clamp(28px,3.1vw,44px)] font-bold leading-none tracking-[-.04em]">
+          <h2 className="m-0 font-sans text-[clamp(28px,3.1vw,36px)] font-bold leading-none tracking-[-.04em]">
             {center.pre}
             <Em>{center.em}</Em>
             {center.post}
           </h2>
-          <div className="flex flex-col font-serif text-[clamp(16px,1.5vw,20px)] leading-[1.35] text-ink-4">
+          <div className="flex flex-col font-serif text-[clamp(16px,1.5vw,17px)] leading-[1.35] text-ink-4">
             {centerLines.map((line) => (
               <span key={line}>{line}</span>
             ))}
@@ -82,27 +82,27 @@ export function ProcessRing({ steps, center, centerLines, aiChip, aiSteps }: Pro
             </span>
             {aiChip}
           </span>
-          <span className="font-serif text-[clamp(13px,1.15vw,15px)] tracking-[.04em] text-muted">{aiSteps}</span>
+          <span className="font-serif text-[clamp(13px,1.15vw,13px)] tracking-[.04em] text-muted">{aiSteps}</span>
         </div>
 
         <ol className="m-0 list-none p-0">
           {steps.map((s, i) => (
             <li
               key={s.t}
-              className={`absolute flex h-[24%] w-[30%] items-center gap-[clamp(14px,1.6vw,22px)] rounded-full pl-[clamp(20px,2.3vw,32px)] pr-[clamp(16px,2vw,28px)] shadow-[0_1px_0_rgba(20,23,21,.04)] ${layout[i].bg}`}
+              className={`absolute flex h-[24%] w-[30%] items-center gap-[clamp(14px,1.6vw,19px)] rounded-full pl-[clamp(20px,2.3vw,27px)] pr-[clamp(16px,2vw,23px)] shadow-[0_1px_0_rgba(20,23,21,.04)] ${layout[i].bg}`}
               style={{ left: layout[i].x, top: layout[i].y }}
             >
               <span
-                className={`grid size-[clamp(56px,5.8vw,78px)] flex-none place-items-center rounded-full text-ink ${layout[i].chip}`}
+                className={`grid size-[clamp(56px,5.8vw,67px)] flex-none place-items-center rounded-full text-ink ${layout[i].chip}`}
               >
                 <Icon name={s.ic} size={30} strokeWidth={1.4} />
               </span>
               <div className="min-w-0">
-                <span className="font-serif text-[clamp(13px,1.1vw,15px)] text-ink-4">{num(i)}</span>
-                <h3 className="m-0 mb-1.5 mt-1 font-sans text-[clamp(20px,1.95vw,26px)] font-bold tracking-[-.025em]">
+                <span className="font-serif text-[clamp(13px,1.1vw,13px)] text-ink-4">{num(i)}</span>
+                <h3 className="m-0 mb-1.5 mt-1 font-sans text-[clamp(20px,1.95vw,23px)] font-bold tracking-[-.025em]">
                   {s.t}
                 </h3>
-                <p className="m-0 font-serif text-[clamp(15px,1.4vw,18.5px)] leading-[1.25] text-ink-4">{s.d}</p>
+                <p className="m-0 font-serif text-[clamp(15px,1.4vw,16px)] leading-[1.25] text-ink-4">{s.d}</p>
               </div>
             </li>
           ))}

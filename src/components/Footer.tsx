@@ -10,7 +10,7 @@ export async function Footer() {
   const { locale, t } = await getDictionary();
 
   return (
-    <footer className="mt-[clamp(56px,7vw,96px)] border-t border-line">
+    <footer className="mt-[clamp(56px,7vw,81px)] border-t border-line">
       <div className="page-container flex flex-wrap items-start justify-between gap-x-12 gap-y-7 pb-9 pt-10">
         <div className="flex max-w-[360px] flex-col gap-2.5">
           <span className="font-serif text-[34px] font-light leading-none tracking-[-.12em] text-brand">JD</span>

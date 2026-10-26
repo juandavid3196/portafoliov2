@@ -8,14 +8,14 @@ export async function ProcessShort() {
   const { locale, t } = await getDictionary();
 
   return (
-    <section aria-labelledby="hp-h" className="page-container pt-[clamp(72px,9vw,128px)]">
+    <section aria-labelledby="hp-h" className="page-container pt-[clamp(72px,9vw,104px)]">
       <div className="mb-10 flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
         <div className="flex flex-col gap-4">
           <Eyebrow>{t.home.processEyebrow}</Eyebrow>
           <DisplayHeading
             id="hp-h"
             h={t.home.processH}
-            className="text-[clamp(34px,3.8vw,52px)] leading-none tracking-[-.04em]"
+            className="text-[clamp(34px,3.8vw,44px)] leading-none tracking-[-.04em]"
           />
         </div>
         <TextLink href={href(locale, 'approach')} arrow>

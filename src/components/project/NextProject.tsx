@@ -19,8 +19,8 @@ export function NextProject({ href, label, name, serif = false, className = '' }
       <span
         className={
           serif
-            ? 'font-serif text-[clamp(30px,3.2vw,44px)] text-brand'
-            : 'font-sans text-[clamp(28px,3vw,40px)] font-bold tracking-[-.04em]'
+            ? 'font-serif text-[clamp(30px,3.2vw,37px)] text-brand'
+            : 'font-sans text-[clamp(28px,3vw,35px)] font-bold tracking-[-.04em]'
         }
       >
         {name} →

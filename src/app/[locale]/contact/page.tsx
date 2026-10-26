@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { ButtonLink } from '@/components/Button';
-import { DisplayHeading } from '@/components/DisplayHeading';
+import { ContactForm } from '@/components/ContactForm';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Icon } from '@/components/Icon';
+import { GitHubMark, LinkedInMark, WhatsAppMark } from '@/components/Logos';
 import { site } from '@/config/site';
 import { dictionaries, hasLocale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/server';
@@ -14,89 +15,128 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/contact'
   return buildMetadata(locale, 'contact', dictionaries[locale].contact.lead);
 }
 
-const row =
-  'flex min-h-[60px] items-center justify-between border-b border-[#c6d6ca] font-serif text-[21px] text-ink';
+type RowProps = { href: string; icon: React.ReactNode; title: string; desc: string };
+
+function ChannelRow({ href, icon, title, desc }: RowProps) {
+  return (
+    <a
+      href={href}
+      target={href.startsWith('mailto:') ? undefined : '_blank'}
+      rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+      className="group flex items-center gap-5 border-b border-line py-[18px] text-ink hover:text-brand"
+    >
+      <span className="grid size-9 flex-none place-items-center text-ink group-hover:text-brand">{icon}</span>
+      <span className="flex-1">
+        <span className="block font-serif text-[clamp(21px,1.9vw,22px)] leading-[1.15]">{title}</span>
+        <span className="mt-1 block font-serif text-[clamp(16px,1.4vw,16px)] text-muted">{desc}</span>
+      </span>
+      <Icon name="arrow-up-right" size={20} strokeWidth={1.5} className="flex-none text-ink" />
+    </a>
+  );
+}
 
 export default async function ContactPage() {
   const { t } = await getDictionary();
   const c = t.contact;
+  const iconCls = 'size-[30px]';
 
   return (
-    <section aria-labelledby="ct-h" className="page-container pt-[clamp(40px,6vw,80px)]">
-      <Eyebrow className="mb-[18px]">{c.eyebrow}</Eyebrow>
-      <DisplayHeading
-        as="h1"
-        id="ct-h"
-        h={c.h}
-        className="text-balance text-[clamp(36px,4.25vw,66px)] leading-[.98] tracking-[-.045em]"
-      />
-      <p className="m-0 mt-[22px] max-w-[640px] text-pretty font-serif text-[clamp(19px,1.7vw,23px)] leading-[1.42] text-ink-4">
+    <section aria-labelledby="ct-h" className="page-container pb-4 pt-[clamp(32px,4.2vw,49px)]">
+      <Eyebrow className="mb-5 text-[11px]">{c.eyebrow}</Eyebrow>
+
+      <div className="flex flex-wrap items-start justify-between gap-x-12 gap-y-6">
+        <h1
+          id="ct-h"
+          className="m-0 font-sans text-[clamp(36px,4.8vw,58px)] font-bold leading-[1.02] tracking-[-.045em]"
+        >
+          <span className="block">{c.h.l1}</span>
+          <span className="block">
+            <em className="font-accent text-[1.12em] font-normal italic leading-[.9] tracking-[-.02em] text-brand">
+              {c.h.em}
+            </em>
+            {c.h.post}
+          </span>
+        </h1>
+        <p className="m-0 mt-3 flex flex-col gap-1 font-serif text-[clamp(16px,1.35vw,16px)]">
+          <span className="flex items-center gap-3 text-ink">
+            <span aria-hidden="true" className="size-2.5 flex-none rounded-full bg-[#1f9d55]" />
+            {c.status}
+          </span>
+          <span className="pl-[22px] text-muted">{c.tz}</span>
+        </p>
+      </div>
+
+      <p className="m-0 mt-7 max-w-[620px] text-pretty font-serif text-[clamp(19px,2vw,23px)] leading-[1.4] text-ink-4">
         {c.lead}
       </p>
 
-      <div className="mt-12 grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-5">
-        {/* Only a real mailto: there is no form backend, so no fake "sent" states. */}
-        <div className="flex flex-col justify-between gap-7 rounded-[18px] bg-brand p-[clamp(28px,3.4vw,44px)] text-ivory">
-          <Eyebrow tone="onGreen">{c.write}</Eyebrow>
-          {site.email ? (
-            <a
-              href={`mailto:${site.email}`}
-              className="inline-flex items-center gap-3.5 break-all border-b border-on-green-line pb-1.5 font-serif text-[clamp(24px,3vw,38px)] text-ivory hover:text-white"
-            >
-              <Icon name="mail" size={28} strokeWidth={1.3} className="flex-none" />
-              {site.email}
-            </a>
-          ) : (
-            <>
-              <p className="m-0 font-serif text-[21px] leading-[1.45] text-[#e6efeb]">{c.noEmail}</p>
-              <ButtonLink href={site.github} variant="ivory" size="action" icon="git" className="self-start">
-                github.com/{site.githubHandle} ↗
-              </ButtonLink>
-            </>
-          )}
+      <div className="mt-[clamp(36px,4.5vw,52px)] grid items-start gap-x-[clamp(24px,2.4vw,28px)] gap-y-10 min-[1000px]:grid-cols-[1fr_1.12fr]">
+        {/* Channels */}
+        <div className="flex flex-col">
+          <h2 className="m-0 font-serif text-[clamp(28px,3vw,35px)] font-normal leading-[1.1] tracking-[-.01em]">
+            {c.channelsH}
+          </h2>
+          <p className="m-0 mt-3 font-serif text-[clamp(17px,1.5vw,17px)] text-muted">{c.channelsSub}</p>
+
+          {/* Only configured channels are shown: nothing is invented. */}
+          {site.whatsapp ? (
+            <div className="mt-7 flex items-center gap-6 rounded-xl bg-sage p-[clamp(20px,2.2vw,26px)]">
+              <WhatsAppMark className="size-[clamp(48px,4.6vw,53px)] flex-none text-brand" />
+              <div className="flex flex-col items-start gap-1">
+                <p className="m-0 font-serif text-[clamp(22px,2.1vw,24px)] leading-[1.15]">{c.whatsapp.t}</p>
+                <p className="m-0 font-serif text-[clamp(16px,1.4vw,16px)] text-muted">{c.whatsapp.d}</p>
+                <ButtonLink href={`https://wa.me/${site.whatsapp}`} size="card" arrow className="mt-3">
+                  {c.whatsapp.cta}
+                </ButtonLink>
+              </div>
+            </div>
+          ) : null}
+
+          <div className="mt-5 flex flex-col border-t border-line">
+            {site.email ? (
+              <ChannelRow
+                href={`mailto:${site.email}`}
+                icon={<Icon name="mail" size={30} strokeWidth={1.4} />}
+                title={c.email.t}
+                desc={c.email.d}
+              />
+            ) : null}
+            {site.linkedin ? (
+              <ChannelRow
+                href={site.linkedin}
+                icon={<LinkedInMark className={iconCls} />}
+                title={c.linkedin.t}
+                desc={c.linkedin.d}
+              />
+            ) : null}
+            <ChannelRow
+              href={site.github}
+              icon={<GitHubMark className={iconCls} />}
+              title={c.github.t}
+              desc={site.githubHandle}
+            />
+          </div>
+
+          <div className="mt-7 grid grid-cols-2 gap-x-6">
+            <div className="pr-6">
+              <p className="m-0 font-sans text-[11px] uppercase tracking-[.16em] text-eyebrow">{c.basedLabel}</p>
+              <p className="m-0 mt-2 font-serif text-[clamp(18px,1.7vw,20px)]">{c.basedValue}</p>
+            </div>
+            <div className="border-l border-line pl-6">
+              <p className="m-0 font-sans text-[11px] uppercase tracking-[.16em] text-eyebrow">{c.langLabel}</p>
+              <p className="m-0 mt-2 font-serif text-[clamp(18px,1.7vw,20px)]">{c.langValue}</p>
+            </div>
+          </div>
+          <p className="m-0 mt-6 font-serif text-[clamp(16px,1.4vw,16px)] text-muted">{c.open}</p>
         </div>
 
-        <div className="flex flex-col rounded-[18px] bg-sage p-[clamp(28px,3.4vw,44px)]">
-          <Eyebrow className="mb-3">{c.channels}</Eyebrow>
-          <a
-            href={site.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${row} hover:text-brand`}
-          >
-            GitHub
-            <span className="text-[16px] text-ink-4">{site.githubHandle} ↗</span>
-          </a>
-          {site.linkedin ? (
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${row} hover:text-brand`}
-            >
-              LinkedIn
-              <span className="text-[16px] text-ink-4">↗</span>
-            </a>
-          ) : null}
-          {site.cvUrl ? (
-            <a href={site.cvUrl} target="_blank" rel="noopener noreferrer" className={`${row} hover:text-brand`}>
-              {c.cv}
-              <span className="text-[16px] text-ink-4">PDF ↗</span>
-            </a>
-          ) : (
-            <div className={row}>
-              {c.cv}
-              <span className="text-[16px] text-ink-4">{c.cvMissing}</span>
-            </div>
-          )}
-          <dl className="m-0 mt-6 flex flex-col gap-2.5">
-            {c.avail.map((item) => (
-              <div key={item.k} className="grid grid-cols-[130px_1fr] gap-3">
-                <dt className="pt-1 font-sans text-[12px] uppercase tracking-[.14em] text-eyebrow">{item.k}</dt>
-                <dd className="m-0 font-serif text-[18px]">{item.v}</dd>
-              </div>
-            ))}
-          </dl>
+        {/* Message form (mailto, no backend) */}
+        <div className="rounded-2xl border border-[#dfe3dd] bg-[#fdfdfb] p-[clamp(22px,2.9vw,34px)]">
+          <h2 className="m-0 font-serif text-[clamp(28px,3vw,35px)] font-normal leading-[1.1] tracking-[-.01em]">
+            {c.form.h}
+          </h2>
+          <p className="m-0 mb-6 mt-3 font-serif text-[clamp(17px,1.5vw,17px)] text-muted">{c.form.sub}</p>
+          <ContactForm form={c.form} email={site.email} noEmail={c.noEmail} />
         </div>
       </div>
     </section>

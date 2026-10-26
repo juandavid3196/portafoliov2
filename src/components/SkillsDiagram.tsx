@@ -6,11 +6,11 @@ export function MainCircle({ label, desc }: CircleProps) {
   return (
     <div className="flex aspect-square w-full flex-col items-center justify-center rounded-full bg-sage-circle p-8 text-center">
       <span className="font-sans text-[12px] uppercase tracking-[.22em] text-eyebrow">{label}</span>
-      <span className="mt-3 font-sans text-[clamp(44px,4.6vw,64px)] font-bold leading-[.95] tracking-[-.05em]">
+      <span className="mt-3 font-sans text-[clamp(44px,4.6vw,53px)] font-bold leading-[.95] tracking-[-.05em]">
         Angular
       </span>
       <span className="font-sans text-[34px] font-bold leading-[.9] text-brand">+</span>
-      <span className="font-sans text-[clamp(44px,4.6vw,64px)] font-bold leading-[.95] tracking-[-.05em]">.NET</span>
+      <span className="font-sans text-[clamp(44px,4.6vw,53px)] font-bold leading-[.95] tracking-[-.05em]">.NET</span>
       <span className="mt-3.5 max-w-[220px] font-serif text-[17px] leading-[1.25] text-ink-4">{desc}</span>
     </div>
   );
@@ -20,11 +20,11 @@ export function AddCircle({ label, desc }: CircleProps) {
   return (
     <div className="flex aspect-square w-full flex-col items-center justify-center rounded-full bg-sky-circle p-7 text-center">
       <span className="font-sans text-[11px] uppercase tracking-[.2em] text-eyebrow">{label}</span>
-      <span className="mt-2.5 font-sans text-[clamp(38px,4.2vw,58px)] font-bold leading-[.95] tracking-[-.05em]">
+      <span className="mt-2.5 font-sans text-[clamp(38px,4.2vw,49px)] font-bold leading-[.95] tracking-[-.05em]">
         React
       </span>
       <span className="font-sans text-[28px] font-bold leading-[.9] text-brand">+</span>
-      <span className="font-sans text-[clamp(38px,4.2vw,58px)] font-bold leading-[.95] tracking-[-.05em]">
+      <span className="font-sans text-[clamp(38px,4.2vw,49px)] font-bold leading-[.95] tracking-[-.05em]">
         Node.js
       </span>
       <span className="mt-3 max-w-[200px] font-serif text-[16px] leading-[1.25] text-ink-4">{desc}</span>

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/work/bos
   return buildMetadata(locale, 'bosvia', dictionaries[locale].bosvia.lead);
 }
 
-const h2 = 'text-[clamp(32px,3.4vw,46px)] leading-[1.04] tracking-[-.04em]';
+const h2 = 'text-[clamp(32px,3.4vw,39px)] leading-[1.04] tracking-[-.04em]';
 
 export default async function BosviaPage() {
   const { locale, t } = await getDictionary();
@@ -23,16 +23,16 @@ export default async function BosviaPage() {
 
   return (
     <article aria-labelledby="bv-h" className="bg-[linear-gradient(#f6ebdd,#f8f6f1_640px)]">
-      <div className="page-container pt-[clamp(32px,5vw,64px)]">
+      <div className="page-container pt-[clamp(32px,5vw,58px)]">
         <BackLink href={href(locale, 'work')} tone="warm">
           {t.common.back}
         </BackLink>
-        <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] items-center gap-x-[clamp(40px,6vw,88px)] gap-y-10">
+        <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] items-center gap-x-[clamp(40px,6vw,70px)] gap-y-10">
           <div className="flex flex-col gap-[22px]">
             <Eyebrow tone="warm">{b.eyebrow}</Eyebrow>
             <h1
               id="bv-h"
-              className="m-0 font-sans text-[clamp(36px,4.1vw,62px)] font-bold leading-[.98] tracking-[-.045em]"
+              className="m-0 font-sans text-[clamp(36px,4.1vw,48px)] font-bold leading-[.98] tracking-[-.045em]"
             >
               <span className="block font-serif font-normal tracking-[-.03em] text-brand">{b.h.l1}</span>
               <span className="block">
@@ -41,7 +41,7 @@ export default async function BosviaPage() {
                 {b.h.post}
               </span>
             </h1>
-            <p className="m-0 text-pretty font-serif text-[clamp(19px,1.7vw,23px)] leading-[1.42] text-warm-ink">
+            <p className="m-0 text-pretty font-serif text-[clamp(19px,1.7vw,20px)] leading-[1.42] text-warm-ink">
               {b.lead}
             </p>
             <p className="m-0 flex items-start gap-3 rounded-xl border border-warm-line bg-warm-card px-[18px] py-4 font-serif text-[17px] leading-[1.45] text-warm-ink">
@@ -59,7 +59,7 @@ export default async function BosviaPage() {
       </div>
 
       {/* 01 · Vision */}
-      <section aria-labelledby="bv-v" className="page-container pt-[clamp(64px,8vw,112px)]">
+      <section aria-labelledby="bv-v" className="page-container pt-[clamp(64px,8vw,93px)]">
         <Eyebrow tone="warm" className="mb-4">
           01 · {b.visionEyebrow}
         </Eyebrow>
@@ -80,7 +80,7 @@ export default async function BosviaPage() {
       {/* 02 · Proposed scope: every item is flagged "Proposed" until it is built. */}
       <section
         aria-labelledby="bv-s"
-        className="page-container grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-x-[clamp(40px,6vw,88px)] gap-y-10 pt-[clamp(64px,8vw,112px)]"
+        className="page-container grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-x-[clamp(40px,6vw,70px)] gap-y-10 pt-[clamp(64px,8vw,93px)]"
       >
         <div className="flex flex-col gap-5">
           <Eyebrow tone="warm">02 · {b.scopeEyebrow}</Eyebrow>
@@ -103,7 +103,7 @@ export default async function BosviaPage() {
         </ul>
       </section>
 
-      <section className="page-container pt-[clamp(56px,7vw,96px)]">
+      <section className="page-container pt-[clamp(56px,7vw,81px)]">
         <NextProject href={href(locale, 'fieldops')} label={t.common.next} name="FieldOps" />
       </section>
     </article>

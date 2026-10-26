@@ -84,13 +84,13 @@ export function SkillsTree({ rows, main, mainDesc, add, addDesc }: SkillsTreePro
               <span className="absolute -top-[18px] left-0 font-serif text-[13px] text-muted">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <h3 className="m-0 ml-[10px] font-sans text-[clamp(22px,2.1vw,30px)] font-bold tracking-[-.03em]">
+              <h3 className="m-0 ml-[10px] font-sans text-[clamp(22px,2.1vw,24px)] font-bold tracking-[-.03em]">
                 {row.t}
               </h3>
             </div>
             <div className="border-l border-line-strong/60 pl-8">
-              <p className="m-0 font-serif text-[clamp(18px,1.75vw,24px)] leading-[1.2] text-ink">{row.tools}</p>
-              <p className="m-0 mt-1 font-serif text-[clamp(15px,1.3vw,18px)] leading-[1.25] text-muted">{row.d}</p>
+              <p className="m-0 font-serif text-[clamp(18px,1.75vw,20px)] leading-[1.2] text-ink">{row.tools}</p>
+              <p className="m-0 mt-1 font-serif text-[clamp(15px,1.3vw,15px)] leading-[1.25] text-muted">{row.d}</p>
             </div>
           </li>
         ))}

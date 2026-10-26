@@ -25,15 +25,15 @@ export default async function SkillsPage() {
 
   return (
     <>
-      <section aria-labelledby="sk-h" className="page-container pt-[clamp(20px,2.4vw,32px)]">
+      <section aria-labelledby="sk-h" className="page-container pt-[clamp(20px,2.4vw,28px)]">
         <Eyebrow className="text-[11px]">{s.eyebrow}</Eyebrow>
         <DisplayHeading
           as="h1"
           id="sk-h"
           h={s.h}
-          className="mt-3 text-[clamp(40px,5.5vw,84px)] leading-[.98] tracking-[-.045em]"
+          className="mt-3 text-[clamp(36px,4.6vw,54px)] leading-[.98] tracking-[-.045em]"
         />
-        <p className="m-0 mt-3 font-serif text-[clamp(19px,1.9vw,26px)] text-muted">{s.sub}</p>
+        <p className="m-0 mt-3 font-serif text-[clamp(19px,1.9vw,22px)] text-muted">{s.sub}</p>
 
         <div className="mt-3">
           {/* ≥1024px: circles + connector tree + aligned rows */}
@@ -75,7 +75,7 @@ export default async function SkillsPage() {
           <span className="px-6 pb-1 font-sans text-[12px] uppercase tracking-[.2em] text-eyebrow min-[900px]:border-l min-[900px]:border-ink/10 min-[900px]:py-4 min-[900px]:pb-4">
             {s.ai}
           </span>
-          <span className="px-6 py-2 font-serif text-[clamp(26px,2.7vw,38px)] text-ink [word-spacing:.2em] min-[900px]:text-center">
+          <span className="px-6 py-2 font-serif text-[clamp(26px,2.7vw,31px)] text-ink [word-spacing:.2em] min-[900px]:text-center">
             Claude / Skills / MCP
           </span>
           <span className="px-6 pb-5 font-serif text-[17px] text-ink-4 min-[900px]:border-l min-[900px]:border-ink/10 min-[900px]:py-4 min-[900px]:pl-8 min-[900px]:pr-8">
@@ -94,7 +94,7 @@ export default async function SkillsPage() {
               key={a.n}
               className={`pr-6 ${i < s.appliedList.length - 1 ? 'min-[900px]:border-r min-[900px]:border-line-soft' : ''}`}
             >
-              <p className="m-0 font-serif text-[clamp(21px,2vw,27px)]">{a.n}</p>
+              <p className="m-0 font-serif text-[clamp(21px,2vw,23px)]">{a.n}</p>
               <p className="m-0 mt-1 font-serif text-[16px] text-muted">{a.d}</p>
             </div>
           ))}
@@ -106,7 +106,7 @@ export default async function SkillsPage() {
 
       <MountainArt
         tone="teal"
-        className="pointer-events-none mt-4 block h-[clamp(60px,8vw,110px)] w-full"
+        className="pointer-events-none mt-4 block h-[clamp(60px,8vw,93px)] w-full"
       />
     </>
   );

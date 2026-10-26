@@ -17,6 +17,7 @@ import {
   House,
   Key,
   Landmark,
+  Laptop,
   Layers,
   LayoutGrid,
   Lightbulb,
@@ -86,6 +87,7 @@ const icons: Record<string, LucideIcon> = {
   network: Network,
   growth: ChartNoAxesCombined,
   palette: Palette,
+  laptop: Laptop,
   filepen: FilePenLine,
   settings: Settings,
 };
