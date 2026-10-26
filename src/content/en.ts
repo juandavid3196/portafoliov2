@@ -700,7 +700,7 @@ export const en = {
         d: 'Listen, define the problem and set priorities.',
       },
       {
-        ic: 'pen',
+        ic: 'filepen',
         t: 'Design',
         d: 'Explore flows, prototype and align the experience.',
       },
@@ -710,7 +710,7 @@ export const en = {
         d: 'Connect interfaces, business rules and data.',
       },
       {
-        ic: 'check',
+        ic: 'settings',
         t: 'Validate',
         d: 'Review, test and refine with feedback.',
       },

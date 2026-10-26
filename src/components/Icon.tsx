@@ -10,6 +10,7 @@ import {
   CircleCheck,
   Code,
   Database,
+  FilePenLine,
   FileText,
   GitBranch,
   Globe,
@@ -30,6 +31,7 @@ import {
   Route,
   Search,
   Send,
+  Settings,
   Shield,
   Smartphone,
   Sparkles,
@@ -84,6 +86,8 @@ const icons: Record<string, LucideIcon> = {
   network: Network,
   growth: ChartNoAxesCombined,
   palette: Palette,
+  filepen: FilePenLine,
+  settings: Settings,
 };
 
 type IconProps = {

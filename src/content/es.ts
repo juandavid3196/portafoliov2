@@ -702,7 +702,7 @@ export const es: Dictionary = {
         d: 'Escuchar, definir el problema y fijar prioridades.',
       },
       {
-        ic: 'pen',
+        ic: 'filepen',
         t: 'Diseñar',
         d: 'Explorar flujos, prototipar y alinear la experiencia.',
       },
@@ -712,7 +712,7 @@ export const es: Dictionary = {
         d: 'Conectar interfaces, reglas de negocio y datos.',
       },
       {
-        ic: 'check',
+        ic: 'settings',
         t: 'Validar',
         d: 'Revisar, probar y ajustar con feedback.',
       },
