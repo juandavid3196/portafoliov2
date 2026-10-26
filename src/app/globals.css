@@ -1,26 +1,139 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Design tokens (from the design handoff). Use as bg-brand, text-muted, border-line… */
+@theme {
+  --color-ivory: #f8f6f1;
+  --color-brand: #084d46;
+  --color-brand-hover: #0b5f56;
+  --color-brand-link: #0b6a5f;
+  --color-ink: #141715;
+  --color-ink-2: #2e3430;
+  --color-ink-3: #3e4540;
+  --color-ink-4: #4a514b;
+  --color-muted: #606760;
+  --color-eyebrow: #4f5650;
+  --color-subtle: #8a918b;
+
+  --color-sage: #e7efe7;
+  --color-sage-circle: #e1ece2;
+  --color-sage-chip: #d2e2d5;
+  --color-sky: #e8f2fa;
+  --color-sky-circle: #e3eff9;
+  --color-sky-chip: #d3e5f4;
+  --color-peach: #faeee2;
+  --color-peach-chip: #f4dcc6;
+  --color-lavender: #eeecf9;
+  --color-lavender-chip: #dcd8f2;
+
+  --color-line: #d5dad3;
+  --color-line-soft: #dde1da;
+  --color-line-strong: #9aa39b;
+  --color-line-mid: #b9c2ba;
+
+  --color-warm-bg: #f6ebdd;
+  --color-warm-card: #fffdf9;
+  --color-warm-line: #e9dccb;
+  --color-warm-line-2: #e0d3c2;
+  --color-warm-ink: #4a4038;
+  --color-warm-ink-2: #5e5248;
+  --color-warm-ink-3: #6b5e52;
+  --color-warm-accent: #7a4a22;
+  --color-warm-dot: #d7a06e;
+
+  --color-on-green-eyebrow: #cfe0d9;
+  --color-on-green-sub: #dce8e3;
+  --color-on-green-line: #9fc4b9;
+  --color-sparkle: #c7773e;
 }
 
+/* next/font sets these variables on <html>, so the values must stay inline. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-instrument-sans), system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, serif;
+  --font-accent: var(--font-instrument-serif), Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Repeated layout values */
+@utility page-container {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+@utility gutter-x {
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    background: var(--color-ivory);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* clip (not hidden) so the sticky header keeps working */
+  body {
+    overflow-x: clip;
+    font-family: var(--font-sans);
+  }
+
+  a {
+    color: var(--color-brand);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-brand-link);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  details > summary {
+    list-style: none;
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+details[open] > summary .plus {
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Home hero photo: bottom fade when stacked, left+bottom fade beside the text. */
+@layer components {
+  .hero-photo {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  }
+
+  @media (min-width: 900px) {
+    .hero-photo {
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 44%),
+        linear-gradient(to top, transparent 0%, #000 22%);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 44%),
+        linear-gradient(to top, transparent 0%, #000 22%);
+      mask-composite: intersect;
+    }
+  }
 }

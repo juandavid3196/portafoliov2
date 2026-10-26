@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Juan David Ríos Rodríguez — Portfolio
 
-## Getting Started
+Bilingual (EN default / ES) portfolio built with Next.js 16 (App Router), React 19, TypeScript (strict) and Tailwind CSS v4. Nine pages per language, statically generated. No database, no auth.
 
-First, run the development server:
+The design reference lives in `design_handoff_portfolio/` (prototype + spec). It is not application code.
+
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000  (redirects to /en)
+npm run build    # production build
+npm run start    # serve the production build
+npm run lint
+npx tsc --noEmit
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where to edit
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | Where |
+|---|---|
+| Copy (all text, both languages) | `src/content/en.ts` and `src/content/es.ts` (same shape; `es.ts` is typed against `en.ts`) |
+| Email, LinkedIn, GitHub, CV, FieldOps demo/manual/repo | `src/config/site.ts` |
+| Photos | `public/images/` (`hero-mountains.png`, `about-camp.png`, `builder.png`) |
+| Colors, fonts, spacing tokens | `src/app/globals.css` (`@theme`) and the fonts in `src/app/[locale]/layout.tsx` |
+| Favicon | `src/app/icon.svg` |
+| Share image (Open Graph) | `src/app/opengraph-image.tsx` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Contact data rule
 
-## Learn More
+Never invent contact data. Every empty value in `src/config/site.ts` hides its action:
 
-To learn more about Next.js, take a look at the following resources:
+- `email` empty → no `mailto:`, the contact page shows an honest notice and the GitHub button.
+- `linkedin` empty → LinkedIn links are hidden.
+- `cvUrl` empty → "CV available on request".
+- `fieldops.demoUrl` / `manualUrl` empty → buttons hidden and the "not published yet" note is shown.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+There is no form backend, so there is no contact form.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Replacing the placeholder photos
 
-## Deploy on Vercel
+The three photos are placeholders (AI-generated people) and must not be presented as the owner's portrait. They carry a "Placeholder photo" badge. After replacing the files in `public/images/` (WebP/AVIF, about 2400px wide for the hero), set `showPhotoNotes: false` in `src/config/site.ts`. If you change file names or extensions, update the `src` in `components/home/Hero.tsx`, `components/home/AboutIntro.tsx` and `app/[locale]/about/page.tsx`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Real screenshots instead of mockups
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`src/components/mockups/*` are illustrative HTML mockups with a visible badge. When real screenshots exist, replace them with `next/image` (radius 14, same shadow) and label them as real.
+
+## Structure
+
+```
+src/
+  app/
+    [locale]/            layout (html lang, header, footer, fonts) + the 9 pages
+    icon.svg, opengraph-image.tsx, robots.ts, sitemap.ts
+  proxy.ts               "/" and unprefixed paths → /en (Next 16 name for middleware)
+  components/            Header, MainNav + MobileMenu + LangSwitch (client), Footer,
+                         Eyebrow, DisplayHeading, Button, TextLink, CtaBand,
+                         SkillsDiagram, ProcessRing, mockups/*, home/*, project/*
+  content/               en.ts, es.ts
+  config/site.ts
+  i18n/                  locales, routes, server helpers (uses next/root-params)
+  lib/                   metadata builder (title, hreflang, Open Graph), nav helpers
+```
+
+Only the mobile menu, the main nav (active page) and the language switch are Client Components. Everything else renders on the server.
+
+## Deploy (Vercel)
+
+Set `NEXT_PUBLIC_SITE_URL` (for example `https://your-domain.com`) so canonical URLs, hreflang, the sitemap and Open Graph use the public origin. Without it the site falls back to Vercel's production URL, then to `http://localhost:3000`.
+
+## Notes
+
+- Package manager: npm (a `package-lock.json` is committed). Use one package manager consistently.
+- `cacheComponents` is enabled in `next.config.ts`; locales are prerendered through `generateStaticParams` in the locale layout.
