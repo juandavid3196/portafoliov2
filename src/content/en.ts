@@ -544,6 +544,21 @@ export const en = {
     interests: ['Nature', 'Hiking', 'Cycling', 'Reading', 'New places'],
     closing: 'Building is how I give those intentions a concrete form.',
     closingLink: 'See what I’m building',
+    outsideLine: 'Outside the screen: hiking, cycling and time in nature.',
+    quality: {
+      eyebrow: 'What quality means to me',
+      l1: 'Care you can see.',
+      q1: 'Quality',
+      mid: ' you can ',
+      q2: 'trace',
+      end: '.',
+      items: [
+        { t: 'Design', d: 'Clear flows and consistent interfaces.' },
+        { t: 'Personalization', d: 'Solutions shaped around real workflows.' },
+        { t: 'Review', d: 'Code, architecture and permissions checked.' },
+        { t: 'Validation', d: 'Testing, traceability and documented decisions.' },
+      ],
+    },
   },
   services: {
     eyebrow: 'Services',

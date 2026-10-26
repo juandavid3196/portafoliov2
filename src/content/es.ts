@@ -546,6 +546,21 @@ export const es: Dictionary = {
     interests: ['Naturaleza', 'Senderismo', 'Ciclismo', 'Lectura', 'Lugares nuevos'],
     closing: 'Construir es mi forma de darles una forma concreta a esas intenciones.',
     closingLink: 'Mira lo que estoy construyendo',
+    outsideLine: 'Fuera de la pantalla: senderismo, ciclismo y tiempo en la naturaleza.',
+    quality: {
+      eyebrow: 'Qué significa calidad para mí',
+      l1: 'Cuidado que se ve.',
+      q1: 'Calidad',
+      mid: ' que se puede ',
+      q2: 'rastrear',
+      end: '.',
+      items: [
+        { t: 'Diseño', d: 'Flujos claros e interfaces consistentes.' },
+        { t: 'Personalización', d: 'Soluciones pensadas para flujos de trabajo reales.' },
+        { t: 'Revisión', d: 'Código, arquitectura y permisos revisados.' },
+        { t: 'Validación', d: 'Pruebas, trazabilidad y decisiones documentadas.' },
+      ],
+    },
   },
   services: {
     eyebrow: 'Servicios',
