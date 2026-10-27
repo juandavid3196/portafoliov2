@@ -21,7 +21,7 @@ npx tsc --noEmit
 |---|---|
 | Copy (all text, both languages) | `src/content/en.ts` and `src/content/es.ts` (same shape; `es.ts` is typed against `en.ts`) |
 | Email, LinkedIn, GitHub, CV, FieldOps demo/manual/repo | `src/config/site.ts` |
-| Photos | `public/images/` (`hero-sierra-nevada.jpg`, `about-hiker-ridge.png`, `about-hiker-sunset.png`) |
+| Photos | `public/images/` (`hero-forest.png`, `hero-column.png`, `about-hiker-ridge.png`, `about-hiker-sunset.png`) |
 | Colors, fonts, spacing tokens | `src/app/globals.css` (`@theme`) and the fonts in `src/app/[locale]/layout.tsx` |
 | Favicon | `src/app/icon.svg` |
 | Share image (Open Graph) | `src/app/opengraph-image.tsx` |
@@ -39,7 +39,7 @@ There is no form backend, so there is no contact form.
 
 ### Photos
 
-All photos are the owner's own (hero background, About page). Swap the files in `public/images/` keeping the same names, or update the `src` in `components/home/HeroBackdrop.tsx` and `app/[locale]/about/page.tsx`. Use WebP/AVIF around 2400px wide for the hero: the current hero photo is 1280px and looks soft on large screens.
+All photos are the owner's own (hero background, About page). Swap the files in `public/images/` keeping the same names, or update the `src` in `components/home/Hero.tsx` and `app/[locale]/about/page.tsx`. Use WebP/AVIF around 2400px wide for the hero: the current hero photo is 1280px and looks soft on large screens.
 
 ### Real screenshots instead of mockups
 

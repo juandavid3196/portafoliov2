@@ -34,6 +34,18 @@ export async function Header() {
           menuLabel={t.common.menu}
           navLabel={t.common.mainNav}
           languageLabel={t.common.language}
+          name={t.common.menuName}
+          labels={{
+            explore: t.common.menuExplore,
+            close: t.common.menuClose,
+            cta: t.common.menuCta,
+            location: t.common.menuLocation,
+          }}
+          links={[
+            ...(site.linkedin ? [{ label: 'LinkedIn', href: site.linkedin }] : []),
+            { label: 'GitHub', href: site.github },
+          ]}
+          homeHref={href(locale, 'home')}
         />
       </div>
     </HeaderShell>

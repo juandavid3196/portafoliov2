@@ -17,7 +17,7 @@ export function LangSwitch({ locale, label, variant = 'desktop', onNavigate }: L
   const pathname = usePathname();
 
   return (
-    <div role="group" aria-label={label} className={variant === 'desktop' ? 'flex gap-[18px]' : 'mt-5 flex gap-2.5'}>
+    <div role="group" aria-label={label} className={variant === 'desktop' ? 'flex gap-[18px]' : 'flex items-center gap-3'}>
       {locales.map((l) => {
         const current = l === locale;
         const base = 'font-sans font-semibold';
@@ -29,7 +29,7 @@ export function LangSwitch({ locale, label, variant = 'desktop', onNavigate }: L
                 : 'border-transparent text-subtle hover:text-brand group-data-[hero=true]/h:text-ivory/70 group-data-[hero=true]/h:hover:text-white'
               }`
             : `${base} grid min-h-[44px] min-w-[56px] place-items-center rounded-full border text-[14px] ${
-                current ? 'border-brand text-brand' : 'border-transparent text-subtle'
+                current ? 'border-ivory text-ivory' : 'border-transparent text-ivory/70'
               }`;
         return (
           <Link

@@ -33,10 +33,10 @@ export default async function WorkPage() {
       <p className="m-0 mt-3 font-serif text-[clamp(19px,1.85vw,21px)] text-ink-4">{t.work.sub}</p>
 
       {/* FieldOps */}
-      <article className="mt-7 flex flex-wrap items-center gap-x-[clamp(36px,4.6vw,80px)] gap-y-9 rounded-[28px] bg-sky p-[clamp(32px,5vw,76px)]">
+      <article className="mt-7 flex flex-wrap items-center gap-x-[clamp(36px,4.6vw,80px)] gap-y-9 rounded-[28px] bg-[#ebf8f0] p-[clamp(32px,5vw,76px)]">
         <div className="flex max-w-[385px] flex-[0_1_385px] flex-col gap-5">
           <div className="flex flex-wrap items-center gap-3 font-sans text-[13px]">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#dcebdf] px-3.5 py-[7px] font-medium text-brand">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3.5 py-[7px] font-medium text-brand">
               <Icon name="box" size={15} strokeWidth={1.6} />
               {t.common.independent}
             </span>
@@ -46,7 +46,7 @@ export default async function WorkPage() {
           </h2>
           <p className="m-0 font-serif text-[21px] leading-[1.38] text-ink-2">{fieldops.desc}</p>
           <p className="m-0 font-sans text-[14px] tracking-[.06em] text-eyebrow">{fieldops.stack}</p>
-          <p className="m-0 flex items-center gap-3 border-t border-[#c9d6e2] pt-[18px] font-serif text-[18px] text-ink-2">
+          <p className="m-0 flex items-center gap-3 border-t border-[#d3e9db] pt-[18px] font-serif text-[18px] text-ink-2">
             <Icon name="user" size={20} />
             {fieldops.role}
           </p>
