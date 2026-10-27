@@ -4,9 +4,7 @@ import { DisplayHeading } from '@/components/DisplayHeading';
 import { EyebrowRule } from '@/components/Eyebrow';
 import { Icon } from '@/components/Icon';
 import { BosviaMark } from '@/components/Logos';
-import { MockBosvia } from '@/components/mockups/MockBosvia';
-import { MockFieldOps } from '@/components/mockups/MockFieldOps';
-import { MockLogit } from '@/components/mockups/MockLogit';
+import { ProductShot } from '@/components/mockups/ProductShot';
 import { TextLink } from '@/components/TextLink';
 import { site } from '@/config/site';
 import { dictionaries, hasLocale, href } from '@/i18n/config';
@@ -35,16 +33,12 @@ export default async function WorkPage() {
       <p className="m-0 mt-3 font-serif text-[clamp(19px,1.85vw,21px)] text-ink-4">{t.work.sub}</p>
 
       {/* FieldOps */}
-      <article className="mt-7 flex flex-wrap items-center gap-x-9 gap-y-9 rounded-[28px] bg-sky p-[clamp(20px,2.3vw,27px)]">
+      <article className="mt-7 flex flex-wrap items-center gap-x-[clamp(36px,4.6vw,80px)] gap-y-9 rounded-[28px] bg-sky p-[clamp(32px,5vw,76px)]">
         <div className="flex max-w-[385px] flex-[0_1_385px] flex-col gap-5">
           <div className="flex flex-wrap items-center gap-3 font-sans text-[13px]">
             <span className="inline-flex items-center gap-2 rounded-full bg-[#dcebdf] px-3.5 py-[7px] font-medium text-brand">
               <Icon name="box" size={15} strokeWidth={1.6} />
               {t.common.independent}
-            </span>
-            <span className="inline-flex items-center gap-[7px] text-eyebrow">
-              <span className="size-[7px] rounded-full bg-subtle" />
-              {t.common.inDev}
             </span>
           </div>
           <h2 className="m-0 font-sans text-[clamp(40px,4.4vw,51px)] font-bold leading-none tracking-[-.045em]">
@@ -65,15 +59,15 @@ export default async function WorkPage() {
             </TextLink>
           </div>
         </div>
-        <div className="min-w-0 flex-[1_1_480px]">
-          <MockFieldOps badge={t.mock.illustrative} />
+        <div className="mx-auto min-w-0 max-w-[660px] flex-[1_1_420px]">
+          <ProductShot src="/images/fieldops-dashboard.png" alt={t.alt.fieldops} />
         </div>
       </article>
 
       <div className="mt-5 grid grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] gap-5">
         {/* Logit */}
-        <article className="flex flex-wrap items-center gap-x-3 gap-y-7 rounded-[28px] bg-sky p-[clamp(20px,2.3vw,27px)] min-[900px]:pr-[18px]">
-          <div className="flex flex-[0_0_205px] flex-col gap-4">
+        <article className="flex flex-wrap items-center gap-x-5 gap-y-8 rounded-[28px] bg-sky p-[clamp(28px,2.9vw,44px)]">
+          <div className="flex flex-[0_0_232px] flex-col gap-4">
             <span className="inline-flex items-center gap-2 self-start rounded-full bg-[#d7e7f5] px-3.5 py-[7px] font-sans text-[13px] font-medium text-brand">
               <Icon name="file" size={15} strokeWidth={1.6} />
               {t.common.professional}
@@ -88,14 +82,14 @@ export default async function WorkPage() {
               {t.common.caseStudy} ↗
             </ButtonLink>
           </div>
-          <div className="min-w-0 flex-[1_1_300px] min-[900px]:-mr-1">
-            <MockLogit badge={t.mock.notReal} tilt="soft" />
+          <div className="min-w-0 flex-[1_1_220px]">
+            <ProductShot src="/images/logit-dashboard.png" width={1586} height={992} alt={t.alt.logit} />
           </div>
         </article>
 
         {/* Bosvia */}
-        <article className="flex flex-wrap items-center gap-x-3 gap-y-7 rounded-[28px] bg-peach p-[clamp(20px,2.3vw,27px)] min-[900px]:pr-[18px]">
-          <div className="flex flex-[0_0_205px] flex-col gap-4">
+        <article className="flex flex-wrap items-center gap-x-5 gap-y-8 rounded-[28px] bg-peach p-[clamp(28px,2.9vw,44px)]">
+          <div className="flex flex-[0_0_232px] flex-col gap-4">
             <div className="flex flex-wrap items-center gap-2.5">
               <span className="inline-flex items-center gap-2 rounded-full bg-[#f3dfcb] px-3.5 py-[7px] font-sans text-[13px] font-medium text-warm-accent">
                 <Icon name="chart" size={15} strokeWidth={1.6} />
@@ -116,8 +110,8 @@ export default async function WorkPage() {
               {t.common.discover}
             </TextLink>
           </div>
-          <div className="min-w-0 flex-[1_1_300px] min-[900px]:-mr-1">
-            <MockBosvia badge={t.mock.concept} tilt="strong" />
+          <div className="min-w-0 flex-[1_1_220px]">
+            <ProductShot src="/images/bosvia-panel.png" alt={t.alt.bosvia} warm />
           </div>
         </article>
       </div>

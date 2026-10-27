@@ -5,7 +5,6 @@ import { DisplayHeading, Em } from '@/components/DisplayHeading';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Icon } from '@/components/Icon';
 import { MountainArt } from '@/components/MountainArt';
-import { PhotoNote } from '@/components/PhotoNote';
 import { TextLink } from '@/components/TextLink';
 import { site } from '@/config/site';
 import { dictionaries, hasLocale, href } from '@/i18n/config';
@@ -58,18 +57,15 @@ export default async function AboutPage() {
           <p className="m-0 font-serif text-[17px] text-muted">{a.outsideLine}</p>
         </div>
         <figure className="m-0 flex flex-col gap-2.5">
-          <div className="relative">
-            <div className="relative aspect-[7/5]">
-              <Image
-                src="/images/about-camp.png"
-                alt={t.alt.aboutCamp}
-                fill
-                priority
-                sizes="(min-width: 1440px) 720px, (min-width: 900px) 52vw, 100vw"
-                className="rounded-[14px] object-cover"
-              />
-            </div>
-            <PhotoNote className="left-3.5 top-3.5">{t.common.photoNote}</PhotoNote>
+          <div className="relative aspect-[7/5]">
+            <Image
+              src="/images/about-hiker-ridge.png"
+              alt={t.alt.aboutCamp}
+              fill
+              priority
+              sizes="(min-width: 1440px) 720px, (min-width: 900px) 52vw, 100vw"
+              className="rounded-[14px] object-cover object-[50%_58%]"
+            />
           </div>
           <figcaption className="font-serif text-[15px] text-muted">{a.caption}</figcaption>
         </figure>
@@ -166,17 +162,14 @@ export default async function AboutPage() {
         className="page-container grid items-start gap-x-[clamp(28px,3.8vw,44px)] gap-y-8 pt-[clamp(32px,4vw,46px)] min-[900px]:grid-cols-[1.22fr_1fr]"
       >
         <figure className="m-0 flex flex-col gap-2.5">
-          <div className="relative">
-            <div className="relative aspect-square">
-              <Image
-                src="/images/builder.png"
-                alt={t.alt.builder}
-                fill
-                sizes="(min-width: 1440px) 720px, (min-width: 900px) 52vw, 100vw"
-                className="rounded-[14px] object-cover"
-              />
-            </div>
-            <PhotoNote className="left-3.5 top-3.5">{t.common.photoNote}</PhotoNote>
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[600px]">
+            <Image
+              src="/images/about-hiker-sunset.png"
+              alt={t.alt.builder}
+              fill
+              sizes="(min-width: 1000px) 600px, 100vw"
+              className="rounded-[14px] object-cover"
+            />
           </div>
           <figcaption className="font-serif text-[15px] text-muted">{a.bCaption}</figcaption>
         </figure>

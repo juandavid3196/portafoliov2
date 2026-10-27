@@ -2,9 +2,7 @@ import { AppLink } from '@/components/AppLink';
 import { ButtonLink } from '@/components/Button';
 import { EyebrowRule } from '@/components/Eyebrow';
 import { Icon } from '@/components/Icon';
-import { MockBosvia } from '@/components/mockups/MockBosvia';
-import { MockFieldOps } from '@/components/mockups/MockFieldOps';
-import { MockLogit } from '@/components/mockups/MockLogit';
+import { ProductShot } from '@/components/mockups/ProductShot';
 import { TextLink } from '@/components/TextLink';
 import { site } from '@/config/site';
 import { href } from '@/i18n/config';
@@ -17,7 +15,7 @@ export async function SelectedWork() {
   return (
     <section
       aria-labelledby="hw-h"
-      className="page-container pt-[clamp(64px,8vw,93px)]"
+      className="wide-container pt-[clamp(64px,8vw,93px)]"
     >
       <EyebrowRule>{t.home.workEyebrow}</EyebrowRule>
       <div className="mb-9 flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
@@ -31,14 +29,10 @@ export async function SelectedWork() {
       </div>
 
       {/* FieldOps — feature card */}
-      <article className="flex flex-wrap items-center gap-x-12 gap-y-9 rounded-[20px] bg-sage p-[clamp(24px,3.4vw,39px)]">
+      <article className="flex flex-wrap items-center gap-x-[clamp(36px,5vw,88px)] gap-y-9 rounded-[20px] bg-sage p-[clamp(32px,5.4vw,80px)]">
         <div className="flex max-w-[420px] flex-[1_1_300px] flex-col gap-5">
           <div className="flex flex-wrap items-center gap-2.5 font-sans text-[13px]">
             <span className="rounded-full bg-ivory px-3.5 py-1.5 font-medium text-brand">{t.common.independent}</span>
-            <span className="inline-flex items-center gap-[7px] text-eyebrow">
-              <span className="size-[7px] rounded-full bg-[#5e9c7f]" />
-              {t.common.inDev}
-            </span>
           </div>
           <div>
             <h3 className="m-0 font-sans text-[clamp(36px,3.8vw,44px)] font-bold leading-none tracking-[-.04em]">
@@ -57,14 +51,14 @@ export async function SelectedWork() {
             </TextLink>
           </div>
         </div>
-        <div className="min-w-0 flex-[2_1_460px]">
-          <MockFieldOps badge={t.mock.illustrative} />
+        <div className="mx-auto min-w-0 flex-[1.4_1_420px] max-w-[640px]">
+          <ProductShot src="/images/fieldops-dashboard.png" alt={t.alt.fieldops} />
         </div>
       </article>
 
       <div className="mt-5 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] gap-5">
         {/* Logit */}
-        <article className="flex flex-col gap-6 rounded-[20px] bg-sky p-[clamp(24px,3vw,35px)]">
+        <article className="flex flex-col gap-8 rounded-[20px] bg-sky p-[clamp(28px,3.4vw,52px)]">
           <div className="flex items-start justify-between gap-4">
             <div>
               <span className="inline-block rounded-full bg-ivory px-3.5 py-1.5 font-sans text-[13px] font-medium text-brand">
@@ -86,11 +80,13 @@ export async function SelectedWork() {
           <p className="m-0 font-serif text-[18px] leading-[1.45] text-ink-4">
             {logit.desc} <span className="text-muted">· {logit.stack}</span>
           </p>
-          <MockLogit badge={t.mock.notReal} />
+          <div className="mx-auto w-full max-w-[540px]">
+            <ProductShot src="/images/logit-dashboard.png" width={1586} height={992} alt={t.alt.logit} />
+          </div>
         </article>
 
         {/* Bosvia */}
-        <article className="flex flex-col gap-6 rounded-[20px] bg-peach p-[clamp(24px,3vw,35px)]">
+        <article className="flex flex-col gap-8 rounded-[20px] bg-peach p-[clamp(28px,3.4vw,52px)]">
           <div className="flex items-start justify-between gap-4">
             <div>
               <div className="flex flex-wrap items-center gap-2.5">
@@ -118,7 +114,9 @@ export async function SelectedWork() {
           <p className="m-0 font-serif text-[18px] leading-[1.45] text-ink-4">
             {bosvia.desc} <span className="text-warm-ink-3">· {bosvia.stack}</span>
           </p>
-          <MockBosvia badge={t.mock.concept} />
+          <div className="mx-auto w-full max-w-[540px]">
+            <ProductShot src="/images/bosvia-panel.png" alt={t.alt.bosvia} warm />
+          </div>
         </article>
       </div>
 

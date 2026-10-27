@@ -22,14 +22,16 @@ export function MainNav({ locale, items, label, languageLabel }: MainNavProps) {
             href={item.href}
             aria-current={active ? 'page' : undefined}
             className={`border-b-[1.5px] py-1.5 font-serif text-[17px] transition-colors duration-200 hover:text-brand ${
-              active ? 'border-brand text-brand' : 'border-transparent text-ink'
+              active
+                ? 'border-brand text-brand group-data-[hero=true]/h:border-ivory group-data-[hero=true]/h:text-ivory'
+                : 'border-transparent text-ink group-data-[hero=true]/h:text-ivory/90 group-data-[hero=true]/h:hover:text-white'
             }`}
           >
             {item.label}
           </Link>
         );
       })}
-      <span className="h-[26px] w-px bg-line" aria-hidden="true" />
+      <span className="h-[26px] w-px bg-line group-data-[hero=true]/h:bg-ivory/60" aria-hidden="true" />
       <LangSwitch locale={locale} label={languageLabel} />
     </nav>
   );

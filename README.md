@@ -21,7 +21,7 @@ npx tsc --noEmit
 |---|---|
 | Copy (all text, both languages) | `src/content/en.ts` and `src/content/es.ts` (same shape; `es.ts` is typed against `en.ts`) |
 | Email, LinkedIn, GitHub, CV, FieldOps demo/manual/repo | `src/config/site.ts` |
-| Photos | `public/images/` (`hero-mountains.png`, `about-camp.png`, `builder.png`) |
+| Photos | `public/images/` (`hero-sierra-nevada.jpg`, `about-hiker-ridge.png`, `about-hiker-sunset.png`) |
 | Colors, fonts, spacing tokens | `src/app/globals.css` (`@theme`) and the fonts in `src/app/[locale]/layout.tsx` |
 | Favicon | `src/app/icon.svg` |
 | Share image (Open Graph) | `src/app/opengraph-image.tsx` |
@@ -37,9 +37,9 @@ Never invent contact data. Every empty value in `src/config/site.ts` hides its a
 
 There is no form backend, so there is no contact form.
 
-### Replacing the placeholder photos
+### Photos
 
-The three photos are placeholders (AI-generated people) and must not be presented as the owner's portrait. They carry a "Placeholder photo" badge. After replacing the files in `public/images/` (WebP/AVIF, about 2400px wide for the hero), set `showPhotoNotes: false` in `src/config/site.ts`. If you change file names or extensions, update the `src` in `components/home/Hero.tsx`, `components/home/AboutIntro.tsx` and `app/[locale]/about/page.tsx`.
+All photos are the owner's own (hero background, About page). Swap the files in `public/images/` keeping the same names, or update the `src` in `components/home/HeroBackdrop.tsx` and `app/[locale]/about/page.tsx`. Use WebP/AVIF around 2400px wide for the hero: the current hero photo is 1280px and looks soft on large screens.
 
 ### Real screenshots instead of mockups
 

@@ -21,7 +21,7 @@ export default async function HomePage() {
       <Hero />
       <SelectedWork />
       <ProcessShort />
-      <section aria-labelledby="hc-h" className="page-container pt-[clamp(72px,9vw,104px)]">
+      <section aria-labelledby="hc-h" className="wide-container pt-[clamp(72px,9vw,104px)]">
         <CtaBand
           headingId="hc-h"
           eyebrow={t.home.ctaEyebrow}

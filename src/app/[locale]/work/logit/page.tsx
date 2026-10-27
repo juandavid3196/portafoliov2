@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { DisplayHeading } from '@/components/DisplayHeading';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Icon } from '@/components/Icon';
-import { MockLogit } from '@/components/mockups/MockLogit';
+import { ProductShot } from '@/components/mockups/ProductShot';
 import { BackLink } from '@/components/project/BackLink';
 import { NextProject } from '@/components/project/NextProject';
 import { dictionaries, hasLocale, href } from '@/i18n/config';
@@ -20,8 +20,8 @@ export default async function LogitPage() {
   const l = t.logit;
 
   return (
-    <article aria-labelledby="lg-h">
-      <div className="page-container pt-[clamp(32px,5vw,58px)]">
+    <article data-wide-page aria-labelledby="lg-h">
+      <div className="wide-container pt-[clamp(32px,5vw,58px)]">
         <BackLink href={href(locale, 'work')}>{t.common.back}</BackLink>
         <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] items-center gap-x-[clamp(40px,6vw,70px)] gap-y-10">
           <div className="flex flex-col gap-[22px]">
@@ -38,7 +38,7 @@ export default async function LogitPage() {
             <p className="m-0 font-sans text-[14px] tracking-[.06em] text-eyebrow">{t.projects.logit.stack}</p>
           </div>
           <div className="rounded-3xl bg-sky p-[clamp(18px,3vw,35px)]">
-            <MockLogit badge={t.mock.notReal} />
+            <ProductShot src="/images/logit-dashboard.png" width={1586} height={992} alt={t.alt.logit} priority />
           </div>
         </div>
         {/* Logit is a company product: the page states ownership and that no real data is shown. */}
@@ -48,7 +48,7 @@ export default async function LogitPage() {
         </p>
       </div>
 
-      <section aria-labelledby="lg-c" className="page-container pt-[clamp(64px,8vw,93px)]">
+      <section aria-labelledby="lg-c" className="wide-container pt-[clamp(64px,8vw,93px)]">
         <Eyebrow className="mb-4">{l.contribEyebrow}</Eyebrow>
         <DisplayHeading
           id="lg-c"
@@ -68,7 +68,7 @@ export default async function LogitPage() {
         </ul>
       </section>
 
-      <section className="page-container pt-[clamp(56px,7vw,81px)]">
+      <section className="wide-container pt-[clamp(56px,7vw,81px)]">
         <NextProject href={href(locale, 'bosvia')} label={t.common.next} name="Bosvia" serif />
       </section>
     </article>

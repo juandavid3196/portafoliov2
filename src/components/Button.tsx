@@ -6,6 +6,7 @@ const variants = {
   secondary: 'border border-line-strong text-ink hover:border-brand hover:text-brand',
   heroSecondary: 'border border-line-strong bg-ivory/60 text-ink hover:border-brand hover:text-brand',
   ivory: 'bg-ivory text-ink hover:bg-white hover:text-brand',
+  onDark: 'bg-[#fdf8f1] text-ink hover:bg-white hover:text-ink',
 } as const;
 
 const sizes = {

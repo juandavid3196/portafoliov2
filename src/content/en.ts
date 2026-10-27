@@ -8,7 +8,6 @@ export const en = {
     footerNav: 'Footer navigation',
     footerLine: 'Thoughtful software. Built to work.',
     location: 'Based in Colombia · Open to remote & freelance',
-    photoNote: 'Placeholder photo · replace with your own',
     independent: 'Independent project',
     professional: 'Professional experience',
     venture: 'SaaS venture',
@@ -41,6 +40,12 @@ export const en = {
     contact: 'Contact',
   },
   home: {
+    hero: {
+      eyebrow: 'Engineering · Design · Product thinking',
+      lines: ['From an idea', 'to something'],
+      em: 'people can use.',
+      lead: 'Full-stack developer building useful platforms with care, clarity and ownership.',
+    },
     eyebrow: 'Juan David / Full-Stack Engineer',
     h: {
       l1: 'Thoughtful software.',
@@ -174,7 +179,7 @@ export const en = {
     ],
   },
   fieldops: {
-    eyebrow: 'Independent project · In development',
+    eyebrow: 'Independent project',
     h: {
       l1: 'FieldOps.',
       pre: 'Field service, ',
@@ -193,7 +198,7 @@ export const en = {
       },
       {
         k: 'Status',
-        v: 'In development. This page describes the product scope, not a finished release.',
+        v: 'Ready for demo.',
       },
     ],
     demo: 'Live demo',
@@ -680,7 +685,6 @@ export const en = {
         d: 'Validate and document the result.',
       },
     ],
-    ctaTitle: 'Tell me what you’re building.',
   },
   approach: {
     eyebrow: 'How I work',
@@ -828,13 +832,13 @@ export const en = {
   alt: {
     hero: 'Mountain landscape in Colombia with a hiker looking over the valleys',
     camp: 'A person resting next to a tent above a valley of clouds',
-    aboutCamp: 'A hiker resting beside a tent above a valley of clouds',
-    builder: 'A hiker with a backpack looking over misty mountains at sunrise',
+    fieldops: 'FieldOps operations dashboard: today’s jobs, items that need attention, technician availability and service performance',
+    bosvia: 'Bosvia operations panel for a property: today’s arrivals and departures, availability calendar, recent bookings and direct sales',
+    logit: 'Illustrative foreign trade operations center: active operations, shipments in transit, document control and shipment tracking',
+    aboutCamp: 'A hiker with an orange backpack sitting on a rock ridge, looking out over forested mountains',
+    builder: 'A hiker in a red jacket and backpack standing on a cliff edge at golden hour',
   },
   mock: {
-    illustrative: 'Illustrative mockup',
-    notReal: 'Illustrative · not the real product',
-    concept: 'Concept mockup',
     placeholder: 'placeholder',
   },
 };

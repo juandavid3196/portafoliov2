@@ -8,7 +8,7 @@ export async function ProcessShort() {
   const { locale, t } = await getDictionary();
 
   return (
-    <section aria-labelledby="hp-h" className="page-container pt-[clamp(72px,9vw,104px)]">
+    <section aria-labelledby="hp-h" className="wide-container pt-[clamp(72px,9vw,104px)]">
       <div className="mb-10 flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
         <div className="flex flex-col gap-4">
           <Eyebrow>{t.home.processEyebrow}</Eyebrow>

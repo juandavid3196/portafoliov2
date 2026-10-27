@@ -30,23 +30,23 @@ export function CtaBand({
   return (
     <div
       className={`flex flex-wrap items-center justify-between gap-x-10 gap-y-7 bg-brand text-ivory ${
-        home ? 'rounded-2xl p-[clamp(32px,4vw,46px)]' : 'rounded-lg p-[clamp(26px,3.2vw,37px)]'
+        home ? 'rounded-2xl px-[clamp(28px,3.4vw,44px)] py-[clamp(24px,2.6vw,34px)]' : 'rounded-lg p-[clamp(26px,3.2vw,37px)]'
       }`}
     >
-      <div className={`flex flex-col ${home ? 'gap-3' : 'gap-3.5'}`}>
+      <div className={`flex flex-col ${home ? 'gap-2.5' : 'gap-3.5'}`}>
         <Eyebrow tone="onGreen">{eyebrow}</Eyebrow>
         <h2
           id={headingId}
           className={`m-0 font-sans font-bold leading-none tracking-[-.04em] text-ivory ${
-            home ? 'text-[clamp(34px,4.4vw,51px)]' : 'text-[clamp(30px,4.7vw,55px)]'
+            home ? 'text-[clamp(26px,2.9vw,36px)]' : 'text-[clamp(30px,4.7vw,55px)]'
           }`}
         >
           {title}
         </h2>
-        <p className={`m-0 font-serif text-on-green-sub ${home ? 'text-[20px]' : 'text-[19px]'}`}>{sub}</p>
+        <p className={`m-0 font-serif text-on-green-sub ${home ? 'text-[17px]' : 'text-[19px]'}`}>{sub}</p>
       </div>
       <div className={`flex flex-col items-center ${home ? 'gap-3.5' : 'gap-3'}`}>
-        <ButtonLink href={primaryHref} variant="ivory" size="cta" arrow>
+        <ButtonLink href={primaryHref} variant="ivory" size={home ? 'card' : 'cta'} arrow>
           {primaryLabel}
         </ButtonLink>
         <TextLink href={secondaryHref} tone="onGreen" size="sm">

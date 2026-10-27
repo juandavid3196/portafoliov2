@@ -24,7 +24,9 @@ export function LangSwitch({ locale, label, variant = 'desktop', onNavigate }: L
         const cls =
           variant === 'desktop'
             ? `${base} border-b-[1.5px] py-1 text-[13px] tracking-[.06em] ${
-                current ? 'border-brand text-brand' : 'border-transparent text-subtle hover:text-brand'
+                current
+                ? 'border-brand text-brand group-data-[hero=true]/h:border-ivory group-data-[hero=true]/h:text-ivory'
+                : 'border-transparent text-subtle hover:text-brand group-data-[hero=true]/h:text-ivory/70 group-data-[hero=true]/h:hover:text-white'
               }`
             : `${base} grid min-h-[44px] min-w-[56px] place-items-center rounded-full border text-[14px] ${
                 current ? 'border-brand text-brand' : 'border-transparent text-subtle'

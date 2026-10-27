@@ -10,7 +10,6 @@ export const es: Dictionary = {
     footerNav: 'Navegación del pie de página',
     footerLine: 'Software pensado. Hecho para funcionar.',
     location: 'Desde Colombia · Disponible para remoto y freelance',
-    photoNote: 'Foto provisional · reemplázala por la tuya',
     independent: 'Proyecto independiente',
     professional: 'Experiencia profesional',
     venture: 'Emprendimiento SaaS',
@@ -43,6 +42,12 @@ export const es: Dictionary = {
     contact: 'Contacto',
   },
   home: {
+    hero: {
+      eyebrow: 'Ingeniería · Diseño · Pensamiento de producto',
+      lines: ['De una idea', 'a algo que'],
+      em: 'la gente puede usar.',
+      lead: 'Desarrollador full-stack que construye plataformas útiles con cuidado, claridad y responsabilidad.',
+    },
     eyebrow: 'Juan David / Ingeniero Full-Stack',
     h: {
       l1: 'Software pensado.',
@@ -176,7 +181,7 @@ export const es: Dictionary = {
     ],
   },
   fieldops: {
-    eyebrow: 'Proyecto independiente · En desarrollo',
+    eyebrow: 'Proyecto independiente',
     h: {
       l1: 'FieldOps.',
       pre: 'Servicios de campo, ',
@@ -195,7 +200,7 @@ export const es: Dictionary = {
       },
       {
         k: 'Estado',
-        v: 'En desarrollo. Esta página describe el alcance del producto, no una versión terminada.',
+        v: 'Listo para demo.',
       },
     ],
     demo: 'Demo en vivo',
@@ -682,7 +687,6 @@ export const es: Dictionary = {
         d: 'Validar y documentar el resultado.',
       },
     ],
-    ctaTitle: 'Cuéntame qué estás construyendo.',
   },
   approach: {
     eyebrow: 'Cómo trabajo',
@@ -830,13 +834,13 @@ export const es: Dictionary = {
   alt: {
     hero: 'Paisaje de montañas en Colombia con un caminante mirando los valles',
     camp: 'Una persona descansando junto a una carpa sobre un valle de nubes',
-    aboutCamp: 'Un caminante descansando junto a una carpa sobre un valle de nubes',
-    builder: 'Un caminante con mochila mirando montañas con neblina al amanecer',
+    fieldops: 'Panel operativo de FieldOps: trabajos del día, puntos que requieren atención, disponibilidad de técnicos y desempeño del servicio',
+    bosvia: 'Panel operativo de Bosvia para un alojamiento: llegadas y salidas de hoy, calendario de disponibilidad, reservas recientes y ventas directas',
+    logit: 'Centro de operaciones de comercio exterior ilustrativo: operaciones activas, embarques en tránsito, control documental y seguimiento de embarques',
+    aboutCamp: 'Un caminante con mochila naranja sentado en un risco, mirando montañas con bosque',
+    builder: 'Un caminante con chaqueta roja y mochila de pie en el borde de un precipicio al atardecer',
   },
   mock: {
-    illustrative: 'Maqueta ilustrativa',
-    notReal: 'Ilustrativo · no es el producto real',
-    concept: 'Maqueta conceptual',
     placeholder: 'provisional',
   },
 };

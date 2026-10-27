@@ -3,7 +3,7 @@ import { ButtonLink } from '@/components/Button';
 import { DisplayHeading } from '@/components/DisplayHeading';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Icon } from '@/components/Icon';
-import { MockFieldOps } from '@/components/mockups/MockFieldOps';
+import { ProductShot } from '@/components/mockups/ProductShot';
 import { BackLink } from '@/components/project/BackLink';
 import { NextProject } from '@/components/project/NextProject';
 import { site } from '@/config/site';
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/work/fie
 }
 
 const h2 = 'text-[clamp(32px,3.4vw,39px)] leading-[1.04] tracking-[-.04em]';
-const section = 'page-container pt-[clamp(64px,8vw,93px)]';
+const section = 'wide-container pt-[clamp(64px,8vw,93px)]';
 
 export default async function FieldOpsPage() {
   const { locale, t } = await getDictionary();
@@ -27,8 +27,8 @@ export default async function FieldOpsPage() {
   const missingLinks = !demoUrl || !manualUrl;
 
   return (
-    <article aria-labelledby="fo-h">
-      <div className="page-container pt-[clamp(32px,5vw,58px)]">
+    <article data-wide-page aria-labelledby="fo-h">
+      <div className="wide-container pt-[clamp(32px,5vw,58px)]">
         <BackLink href={href(locale, 'work')}>{t.common.back}</BackLink>
         <div className="mt-4 flex flex-wrap items-end gap-x-[clamp(40px,6vw,70px)] gap-y-8">
           <div className="flex flex-[1_1_520px] flex-col gap-[22px]">
@@ -75,10 +75,16 @@ export default async function FieldOpsPage() {
         </div>
       </div>
 
-      <div className="page-container mt-[clamp(40px,5vw,58px)]">
-        <div className="rounded-3xl bg-sky p-[clamp(20px,4vw,46px)]">
-          <div className="mx-auto max-w-[980px]">
-            <MockFieldOps badge={t.mock.illustrative} />
+      {/* Product picture: full-width band */}
+      <div className="mt-[clamp(40px,5vw,58px)] bg-sky">
+        <div className="wide-container py-[clamp(24px,4vw,52px)]">
+          <div className="mx-auto max-w-[1600px]">
+            <ProductShot
+              src="/images/fieldops-dashboard.png"
+              alt={t.alt.fieldops}
+              sizes="(min-width: 1700px) 1600px, (min-width: 1000px) 85vw, 100vw"
+              priority
+            />
           </div>
         </div>
       </div>
@@ -146,8 +152,8 @@ export default async function FieldOpsPage() {
       </section>
 
       {/* 04 · Access & structure */}
-      <section aria-labelledby="fo-a" className="page-container mt-[clamp(64px,8vw,93px)]">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,400px),1fr))] gap-x-16 gap-y-8 rounded-3xl bg-sage p-[clamp(28px,4vw,46px)]">
+      <section aria-labelledby="fo-a" className="mt-[clamp(64px,8vw,93px)] bg-sage">
+        <div className="wide-container grid grid-cols-[repeat(auto-fit,minmax(min(100%,400px),1fr))] gap-x-16 gap-y-8 py-[clamp(32px,4.5vw,56px)]">
           <div className="flex flex-col gap-4">
             <Eyebrow>04 · {f.accessEyebrow}</Eyebrow>
             <DisplayHeading

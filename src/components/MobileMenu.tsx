@@ -38,7 +38,7 @@ export function MobileMenu({ locale, items, menuLabel, navLabel, languageLabel }
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className="flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full border border-line bg-white px-3.5 font-sans text-[14px] text-ink min-[1080px]:hidden"
+        className="flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full border border-line bg-white px-3.5 font-sans text-[14px] text-ink group-data-[hero=true]/h:border-ivory/40 group-data-[hero=true]/h:bg-transparent group-data-[hero=true]/h:text-ivory min-[1080px]:hidden"
       >
         <Icon name={open ? 'x' : 'menu'} size={18} strokeWidth={1.6} />
         {menuLabel}

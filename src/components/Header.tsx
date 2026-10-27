@@ -15,11 +15,11 @@ export async function Header() {
       <div className="page-container flex h-[76px] items-center justify-between gap-6">
         <Link
           href={href(locale, 'home')}
-          className="flex min-w-0 items-center gap-2.5 text-ink hover:text-ink min-[420px]:gap-3.5"
+          className="flex min-w-0 items-center gap-2.5 text-ink hover:text-ink group-data-[hero=true]/h:text-ivory group-data-[hero=true]/h:hover:text-ivory min-[420px]:gap-3.5"
         >
           <span
             aria-hidden="true"
-            className="pr-1 font-serif text-[34px] font-light leading-none tracking-[-.12em] text-brand"
+            className="pr-1 font-serif text-[34px] font-light leading-none tracking-[-.12em] text-brand group-data-[hero=true]/h:text-ivory"
           >
             JD
           </span>

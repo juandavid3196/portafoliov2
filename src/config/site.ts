@@ -19,7 +19,4 @@ export const site = {
     demoUrl: '',
     manualUrl: '',
   },
-  // Shows the "Placeholder photo" badge on the stock images. Turn off once
-  // the files in public/images are replaced with the owner's own photos.
-  showPhotoNotes: true,
 };

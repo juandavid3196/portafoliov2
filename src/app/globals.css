@@ -60,6 +60,19 @@
   padding-inline: clamp(20px, 2.6vw, 30px);
 }
 
+/* Project pages: sections run (almost) edge to edge. */
+@utility wide-container {
+  max-width: 2000px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 3vw, 56px);
+}
+
+/* Header and footer follow the wide layout on project pages (they carry data-wide-page). */
+body:has([data-wide-page]) :is(header, footer) .page-container {
+  max-width: 2000px;
+  padding-inline: clamp(20px, 3vw, 56px);
+}
+
 @utility gutter-x {
   padding-inline: clamp(20px, 2.6vw, 30px);
 }
@@ -114,26 +127,5 @@ details[open] > summary .plus {
     transition: none !important;
     animation: none !important;
     scroll-behavior: auto !important;
-  }
-}
-
-/* Home hero photo: bottom fade when stacked, left+bottom fade beside the text. */
-@layer components {
-  .hero-photo {
-    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
-    mask-image: linear-gradient(to bottom, #000 60%, transparent);
-  }
-
-  @media (min-width: 900px) {
-    .hero-photo {
-      -webkit-mask-image:
-        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 44%),
-        linear-gradient(to top, transparent 0%, #000 22%);
-      -webkit-mask-composite: source-in;
-      mask-image:
-        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 44%),
-        linear-gradient(to top, transparent 0%, #000 22%);
-      mask-composite: intersect;
-    }
   }
 }

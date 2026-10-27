@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
-import { CtaBand } from '@/components/CtaBand';
 import { DisplayHeading } from '@/components/DisplayHeading';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Icon } from '@/components/Icon';
 import { MountainArt } from '@/components/MountainArt';
-import { dictionaries, hasLocale, href } from '@/i18n/config';
+import { dictionaries, hasLocale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/server';
 import { buildMetadata } from '@/lib/metadata';
 
@@ -23,7 +22,7 @@ const tints = [
 ];
 
 export default async function ServicesPage() {
-  const { locale, t } = await getDictionary();
+  const { t } = await getDictionary();
   const s = t.services;
 
   return (
@@ -100,19 +99,7 @@ export default async function ServicesPage() {
             </li>
           ))}
         </ol>
-        <div className="mt-[clamp(44px,5.4vw,63px)]">
-          <CtaBand
-            variant="services"
-            eyebrow={t.home.ctaEyebrow}
-            title={s.ctaTitle}
-            sub={t.home.ctaSub}
-            primaryLabel={t.home.cta2}
-            primaryHref={href(locale, 'contact')}
-            secondaryLabel={t.home.ctaSecondary}
-            secondaryHref={href(locale, 'work')}
-          />
-        </div>
-        <MountainArt className="pointer-events-none ml-auto mt-8 h-[clamp(56px,7vw,81px)] w-[min(62%,800px)] [-webkit-mask-image:linear-gradient(to_left,#000_45%,transparent)] [mask-image:linear-gradient(to_left,#000_45%,transparent)]" />
+        <MountainArt className="pointer-events-none ml-auto mt-[clamp(44px,5.4vw,63px)] h-[clamp(56px,7vw,81px)] w-[min(62%,800px)] [-webkit-mask-image:linear-gradient(to_left,#000_45%,transparent)] [mask-image:linear-gradient(to_left,#000_45%,transparent)]" />
       </section>
     </>
   );

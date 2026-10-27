@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { DisplayHeading, Em } from '@/components/DisplayHeading';
 import { Eyebrow } from '@/components/Eyebrow';
 import { Icon } from '@/components/Icon';
-import { MockBosvia } from '@/components/mockups/MockBosvia';
+import { ProductShot } from '@/components/mockups/ProductShot';
 import { BackLink } from '@/components/project/BackLink';
 import { NextProject } from '@/components/project/NextProject';
 import { dictionaries, hasLocale, href } from '@/i18n/config';
@@ -22,8 +22,8 @@ export default async function BosviaPage() {
   const b = t.bosvia;
 
   return (
-    <article aria-labelledby="bv-h" className="bg-[linear-gradient(#f6ebdd,#f8f6f1_640px)]">
-      <div className="page-container pt-[clamp(32px,5vw,58px)]">
+    <article data-wide-page aria-labelledby="bv-h" className="bg-[linear-gradient(#f6ebdd,#f8f6f1_640px)]">
+      <div className="wide-container pt-[clamp(32px,5vw,58px)]">
         <BackLink href={href(locale, 'work')} tone="warm">
           {t.common.back}
         </BackLink>
@@ -58,8 +58,23 @@ export default async function BosviaPage() {
         </div>
       </div>
 
+      {/* Product picture: full-width band */}
+      <div className="mt-[clamp(40px,5vw,58px)] border-y border-warm-line bg-[#f3e7d6]/80">
+        <div className="wide-container py-[clamp(24px,4vw,52px)]">
+          <div className="mx-auto max-w-[1600px]">
+            <ProductShot
+              src="/images/bosvia-panel.png"
+              alt={t.alt.bosvia}
+              warm
+              sizes="(min-width: 1700px) 1600px, (min-width: 1000px) 85vw, 100vw"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+
       {/* 01 · Vision */}
-      <section aria-labelledby="bv-v" className="page-container pt-[clamp(64px,8vw,93px)]">
+      <section aria-labelledby="bv-v" className="wide-container pt-[clamp(64px,8vw,93px)]">
         <Eyebrow tone="warm" className="mb-4">
           01 · {b.visionEyebrow}
         </Eyebrow>
@@ -80,12 +95,11 @@ export default async function BosviaPage() {
       {/* 02 · Proposed scope: every item is flagged "Proposed" until it is built. */}
       <section
         aria-labelledby="bv-s"
-        className="page-container grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-x-[clamp(40px,6vw,70px)] gap-y-10 pt-[clamp(64px,8vw,93px)]"
+        className="wide-container grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-x-[clamp(40px,6vw,70px)] gap-y-10 pt-[clamp(64px,8vw,93px)]"
       >
         <div className="flex flex-col gap-5">
           <Eyebrow tone="warm">02 · {b.scopeEyebrow}</Eyebrow>
           <DisplayHeading id="bv-s" h={b.scopeH} className={h2} />
-          <MockBosvia badge={t.mock.concept} />
         </div>
         <ul className="m-0 list-none border-t border-warm-line-2 p-0">
           {b.scope.map((s) => (
@@ -103,7 +117,7 @@ export default async function BosviaPage() {
         </ul>
       </section>
 
-      <section className="page-container pt-[clamp(56px,7vw,81px)]">
+      <section className="wide-container pt-[clamp(56px,7vw,81px)]">
         <NextProject href={href(locale, 'fieldops')} label={t.common.next} name="FieldOps" />
       </section>
     </article>
