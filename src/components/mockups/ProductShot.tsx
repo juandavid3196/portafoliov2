@@ -37,6 +37,7 @@ export function ProductShot({
         width={width}
         height={height}
         sizes={sizes}
+        quality={90}
         priority={priority}
         className="block h-auto w-full"
       />

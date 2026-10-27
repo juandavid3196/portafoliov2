@@ -285,14 +285,16 @@ export default async function LogitPage() {
 
         <div className="mt-10 grid items-start gap-x-14 gap-y-10 min-[1000px]:grid-cols-[1.05fr_1fr]">
           <figure className="m-0">
-            <div className="rounded-3xl bg-[#e6f0fb] p-[clamp(14px,1.8vw,24px)]">
+            {/* The picture carries its own pale-blue frame */}
+            <div className="overflow-hidden rounded-3xl bg-[#e6f0fb]">
               <Image
-                src="/images/logit-new-import.png"
+                src="/images/logit-new-import-hd.png"
                 alt={l.decisions.figAlt}
-                width={596}
-                height={484}
-                sizes="(min-width: 1000px) 46vw, 100vw"
-                className="block h-auto w-full rounded-xl"
+                width={1402}
+                height={1122}
+                quality={90}
+                sizes="(min-width: 1000px) 55vw, 100vw"
+                className="block h-auto w-full"
               />
             </div>
             <figcaption className="mt-3 font-sans text-[12px] text-eyebrow">{l.decisions.figCaption}</figcaption>

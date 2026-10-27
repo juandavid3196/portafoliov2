@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    // 75 is the default; 90 keeps text in UI screenshots crisp.
+    qualities: [75, 90],
+  },
   turbopack: {
     rules: {
       "*.css": {

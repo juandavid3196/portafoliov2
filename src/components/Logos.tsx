@@ -27,11 +27,7 @@ export function BosviaMark({ className = '' }: { className?: string }) {
 // Colombia flag (yellow ½, blue ¼, red ¼). SVG because flag emoji do not render on Windows.
 export function ColombiaFlag({ className = '' }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 16"
-      className={`rounded-[2px] ring-1 ring-black/10 ${className}`}
-      aria-hidden="true"
-    >
+    <svg viewBox="0 0 24 16" className={`rounded-[2px] ring-1 ring-black/10 ${className}`} aria-hidden="true">
       <rect width="24" height="8" fill="#fcd116" />
       <rect y="8" width="24" height="4" fill="#003893" />
       <rect y="12" width="24" height="4" fill="#ce1126" />
@@ -65,7 +61,7 @@ export function LinkedInMark({ className = '' }: { className?: string }) {
 }
 
 // Logit wordmark (company product, shown illustratively on its case study).
-export function LogitLogo({ tagline, className = '' }: { tagline: string; className?: string }) {
+export function LogitLogo({ tagline, className = '' }: { tagline?: string; className?: string }) {
   return (
     <div className={`flex items-center gap-3 ${className}`} role="img" aria-label="Logit">
       <svg viewBox="0 0 48 52" className="h-[52px] w-[48px] flex-none" aria-hidden="true">
@@ -74,9 +70,11 @@ export function LogitLogo({ tagline, className = '' }: { tagline: string; classN
       </svg>
       <span className="flex flex-col leading-none">
         <span className="font-sans text-[40px] font-bold tracking-[-.04em] text-[#14213d]">Logit</span>
-        <span className="mt-1 font-sans text-[10px] font-semibold uppercase tracking-[.22em] text-[#3a4a7a]">
-          {tagline}
-        </span>
+        {tagline ? (
+          <span className="mt-1 font-sans text-[10px] font-semibold uppercase tracking-[.22em] text-[#3a4a7a]">
+            {tagline}
+          </span>
+        ) : null}
       </span>
     </div>
   );

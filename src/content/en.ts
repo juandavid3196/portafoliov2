@@ -40,6 +40,57 @@ export const en = {
     contact: 'Contact',
   },
   home: {
+    work: {
+      eyebrow: 'Selected work / 01 — 03',
+      h: {
+        pre: 'Ideas made ',
+        em: 'useful',
+        post: '.',
+      },
+      side: 'Independent products and professional experience, shaped by real operational problems.',
+      fieldops: {
+        kicker: '01 / Independent project',
+        cat: 'Field service management',
+        lead: 'Connecting service requests, scheduling and field operations in one platform.',
+        role: 'Product design & full-stack development',
+        chips: ['Angular', '.NET', 'PostgreSQL', 'Docker'],
+        cta: 'Explore FieldOps',
+        features: [
+          {
+            ic: 'calendar',
+            t: 'Scheduling',
+          },
+          {
+            ic: 'users',
+            t: 'Team coordination',
+          },
+          {
+            ic: 'chart',
+            t: 'Operational traceability',
+          },
+        ],
+      },
+      logit: {
+        kicker: '02 / Professional experience',
+        cat: 'Foreign trade platform',
+        lead: 'Front-end leadership and full-stack contributions to a complex international trade platform.',
+        role: 'My role / Full-stack engineer · Frontend lead',
+        chips: ['Angular', '.NET', 'Design systems'],
+        cta: 'Read the case study',
+        tags: ['Imports', 'Exports', 'Products', 'Contacts'],
+        caption: 'Illustrative interface · Fictional data',
+      },
+      bosvia: {
+        kicker: '03 / SaaS venture',
+        status: 'Product concept',
+        cat: 'Hospitality, thoughtfully connected.',
+        lead: 'A platform concept for glampings and small hotels, connecting reservations and daily operations.',
+        chips: ['Reservations', 'Operations', 'Customization'],
+        cta: 'Discover Bosvia',
+      },
+      footerLine: 'Different contexts. The same care for design, engineering and the people using the product.',
+      footerLink: 'How I work',
+    },
     hero: {
       eyebrow: 'Engineering · Design · Product thinking',
       lines: ['From an idea', 'to something'],
@@ -62,10 +113,6 @@ export const en = {
       em: 'work together',
       post: '.',
     },
-    workEyebrow: 'Selected work',
-    workTitle: 'Products with a purpose.',
-    workSide: 'Independent products and professional experience, each shown with its current status.',
-    allWork: 'View all work',
     aboutEyebrow: 'About',
     aboutH: {
       pre: 'Design sense, ',

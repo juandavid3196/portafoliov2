@@ -42,6 +42,58 @@ export const es: Dictionary = {
     contact: 'Contacto',
   },
   home: {
+    work: {
+      eyebrow: 'Trabajo seleccionado / 01 — 03',
+      h: {
+        pre: 'Ideas hechas ',
+        em: 'útiles',
+        post: '.',
+      },
+      side: 'Productos independientes y experiencia profesional, moldeados por problemas operativos reales.',
+      fieldops: {
+        kicker: '01 / Proyecto independiente',
+        cat: 'Gestión de servicios de campo',
+        lead: 'Conecta solicitudes de servicio, agenda y operación en campo en una sola plataforma.',
+        role: 'Diseño de producto y desarrollo full-stack',
+        chips: ['Angular', '.NET', 'PostgreSQL', 'Docker'],
+        cta: 'Explorar FieldOps',
+        features: [
+          {
+            ic: 'calendar',
+            t: 'Agenda',
+          },
+          {
+            ic: 'users',
+            t: 'Coordinación de equipos',
+          },
+          {
+            ic: 'chart',
+            t: 'Trazabilidad operativa',
+          },
+        ],
+      },
+      logit: {
+        kicker: '02 / Experiencia profesional',
+        cat: 'Plataforma de comercio exterior',
+        lead: 'Liderazgo frontend y contribuciones full-stack en una plataforma compleja de comercio internacional.',
+        role: 'Mi rol / Ingeniero full-stack · Líder frontend',
+        chips: ['Angular', '.NET', 'Sistemas de diseño'],
+        cta: 'Leer el caso de estudio',
+        tags: ['Importaciones', 'Exportaciones', 'Productos', 'Contactos'],
+        caption: 'Interfaz ilustrativa · Datos ficticios',
+      },
+      bosvia: {
+        kicker: '03 / Emprendimiento SaaS',
+        status: 'Concepto de producto',
+        cat: 'Hospitalidad, conectada con cuidado.',
+        lead: 'Un concepto de plataforma para glampings y hoteles pequeños que conecta reservas y operación diaria.',
+        chips: ['Reservas', 'Operación', 'Personalización'],
+        cta: 'Conocer Bosvia',
+      },
+      footerLine:
+        'Contextos distintos. El mismo cuidado por el diseño, la ingeniería y las personas que usan el producto.',
+      footerLink: 'Cómo trabajo',
+    },
     hero: {
       eyebrow: 'Ingeniería · Diseño · Pensamiento de producto',
       lines: ['De una idea', 'a algo que'],
@@ -64,10 +116,6 @@ export const es: Dictionary = {
       em: 'funcionen juntos',
       post: '.',
     },
-    workEyebrow: 'Trabajo seleccionado',
-    workTitle: 'Productos con propósito.',
-    workSide: 'Productos independientes y experiencia profesional, cada uno con su estado actual.',
-    allWork: 'Ver todo el trabajo',
     aboutEyebrow: 'Sobre mí',
     aboutH: {
       pre: 'Sensibilidad de diseño, ',
