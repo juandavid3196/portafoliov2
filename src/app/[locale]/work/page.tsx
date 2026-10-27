@@ -101,7 +101,7 @@ export default async function WorkPage() {
               </span>
             </div>
             <h2 className="m-0 flex items-end gap-3 font-serif text-[clamp(40px,3.8vw,44px)] font-normal leading-none tracking-[-.02em] text-[#14213d]">
-              <BosviaMark className="h-[1.15em] w-[1.3em] flex-none" />
+              <BosviaMark className="h-[1.5em] w-auto flex-none" />
               Bosvia
             </h2>
             <p className="m-0 font-serif text-[19px] leading-[1.4] text-ink-2">{bosvia.cat}</p>

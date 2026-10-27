@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 // Brand marks for the owner's own products (FieldOps, Bosvia).
 
 export function FieldOpsMark({ className = '' }: { className?: string }) {
@@ -11,17 +13,9 @@ export function FieldOpsMark({ className = '' }: { className?: string }) {
   );
 }
 
-// Stylised hummingbird in teal.
+// Barranquero andino (turquoise-browed motmot) from the Bosvia logo.
 export function BosviaMark({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 72 64" className={className} aria-hidden="true">
-      <path d="M4 8c14 0 26 7 31 20-9-4-20-2-27-4 5-3 6-9-4-16z" fill="#1fa79d" />
-      <path d="M40 22c9-2 17 1 20 8l-9 3c-4-4-8-7-11-11z" fill="#14877f" />
-      <path d="M33 28c10-2 18 3 17 12-2 10-10 18-20 21 3-8 3-14-3-21 3-4 5-8 6-12z" fill="#1fa79d" />
-      <path d="M52 27l17-4-16 8z" fill="#14877f" />
-      <circle cx="49" cy="27" r="1.4" fill="#fff" />
-    </svg>
-  );
+  return <Image src="/images/bosvia-mark.png" alt="" width={305} height={363} className={className} />;
 }
 
 // Colombia flag (yellow ½, blue ¼, red ¼). SVG because flag emoji do not render on Windows.
