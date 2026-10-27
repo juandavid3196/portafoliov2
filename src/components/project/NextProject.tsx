@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { AppLink } from '../AppLink';
 
 type NextProjectProps = {
   href: string;
@@ -11,7 +11,7 @@ type NextProjectProps = {
 
 export function NextProject({ href, label, name, serif = false, className = '' }: NextProjectProps) {
   return (
-    <Link
+    <AppLink
       href={href}
       className={`flex items-center justify-between gap-5 border-y border-line py-7 text-ink hover:text-brand ${className}`}
     >
@@ -25,6 +25,6 @@ export function NextProject({ href, label, name, serif = false, className = '' }
       >
         {name} →
       </span>
-    </Link>
+    </AppLink>
   );
 }

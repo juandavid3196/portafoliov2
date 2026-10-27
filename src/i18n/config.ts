@@ -19,7 +19,6 @@ export const routes = {
   home: '',
   work: 'work',
   fieldops: 'work/fieldops',
-  bosvia: 'work/bosvia',
   logit: 'work/logit',
   about: 'about',
   skills: 'skills',

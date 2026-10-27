@@ -423,7 +423,7 @@ export default async function LogitPage() {
           </Link>
         </div>
 
-        <NextProject href={href(locale, 'bosvia')} label={t.common.next} name="Bosvia" serif className="mt-10" />
+        <NextProject href="https://bosvia-portal.vercel.app/" label={t.common.next} name="Bosvia" serif className="mt-10" />
       </section>
     </article>
   );

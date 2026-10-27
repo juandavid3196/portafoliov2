@@ -106,7 +106,7 @@ export default async function WorkPage() {
             </h2>
             <p className="m-0 font-serif text-[19px] leading-[1.4] text-ink-2">{bosvia.cat}</p>
             <p className="m-0 font-sans text-[13px] tracking-[.05em] text-warm-ink-2">{bosvia.stack}</p>
-            <TextLink href={href(locale, 'bosvia')} tone="ink" className="self-start" arrow>
+            <TextLink href="https://bosvia-portal.vercel.app/" tone="ink" className="self-start" arrow>
               {t.common.discover}
             </TextLink>
           </div>
