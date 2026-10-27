@@ -9,6 +9,7 @@ import type { Locale } from '@/i18n/config';
 import { isActive, type NavItem } from '@/lib/nav';
 import { Icon } from './Icon';
 import { LangSwitch } from './LangSwitch';
+import { Emblem } from './Logos';
 
 type MobileMenuProps = {
   locale: Locale;
@@ -118,9 +119,7 @@ export function MobileMenu({
             onClick={close}
             className="flex items-center gap-3.5 pt-2 text-ivory hover:text-ivory"
           >
-            <span aria-hidden="true" className="font-serif text-[40px] font-light leading-none tracking-[-.12em]">
-              JD
-            </span>
+            <Emblem className="size-[52px]" />
             <span className="font-serif text-[22px] tracking-[-.01em]">{name}</span>
           </Link>
           <button

@@ -79,3 +79,8 @@ export function LogitLogo({ tagline, className = '' }: { tagline?: string; class
     </div>
   );
 }
+
+// Geometric emblem that precedes the name. Coloured by the surrounding text colour.
+export function Emblem({ className = '' }: { className?: string }) {
+  return <span aria-hidden="true" className={`emblem ${className}`} />;
+}

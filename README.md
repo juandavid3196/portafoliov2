@@ -23,7 +23,8 @@ npx tsc --noEmit
 | Email, LinkedIn, GitHub, CV, FieldOps demo/manual/repo | `src/config/site.ts` |
 | Photos | `public/images/` (`hero-forest.png`, `hero-column.png`, `about-hiker-ridge.png`, `about-hiker-sunset.png`) |
 | Colors, fonts, spacing tokens | `src/app/globals.css` (`@theme`) and the fonts in `src/app/[locale]/layout.tsx` |
-| Favicon | `src/app/icon.svg` |
+| Emblem (header, footer, menu) | `public/images/emblem.png` (transparent PNG, tinted with CSS) |
+| Favicon / app icon | `src/app/icon.png` (512px) and `src/app/apple-icon.png` (180px) |
 | Share image (Open Graph) | `src/app/opengraph-image.tsx` |
 
 ### Contact data rule

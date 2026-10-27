@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { site } from '@/config/site';
 import { href, navKeys } from '@/i18n/config';
 import { getDictionary } from '@/i18n/server';
-import { ColombiaFlag } from './Logos';
+import { ColombiaFlag, Emblem } from './Logos';
 
 const linkCls = 'font-serif text-[17px] text-ink hover:text-brand';
 
@@ -13,7 +13,7 @@ export async function Footer() {
     <footer className="mt-[clamp(56px,7vw,81px)] border-t border-line">
       <div className="page-container flex flex-wrap items-start justify-between gap-x-12 gap-y-7 pb-9 pt-10">
         <div className="flex max-w-[360px] flex-col gap-2.5">
-          <span className="font-serif text-[34px] font-light leading-none tracking-[-.12em] text-brand">JD</span>
+          <Emblem className="size-[52px] text-brand" />
           <p className="m-0 font-serif text-[17px] leading-[1.45] text-muted">{t.common.footerLine}</p>
         </div>
         <nav aria-label={t.common.footerNav} className="flex flex-wrap gap-x-[26px] gap-y-2.5">
