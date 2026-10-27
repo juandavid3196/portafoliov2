@@ -63,3 +63,21 @@ export function LinkedInMark({ className = '' }: { className?: string }) {
     </svg>
   );
 }
+
+// Logit wordmark (company product, shown illustratively on its case study).
+export function LogitLogo({ tagline, className = '' }: { tagline: string; className?: string }) {
+  return (
+    <div className={`flex items-center gap-3 ${className}`} role="img" aria-label="Logit">
+      <svg viewBox="0 0 48 52" className="h-[52px] w-[48px] flex-none" aria-hidden="true">
+        <path d="M4 4h14v28h8v-8h14v24H4z" fill="#1f5bd8" />
+        <path d="M26 4h14v14H26z" fill="#4f8df5" />
+      </svg>
+      <span className="flex flex-col leading-none">
+        <span className="font-sans text-[40px] font-bold tracking-[-.04em] text-[#14213d]">Logit</span>
+        <span className="mt-1 font-sans text-[10px] font-semibold uppercase tracking-[.22em] text-[#3a4a7a]">
+          {tagline}
+        </span>
+      </span>
+    </div>
+  );
+}

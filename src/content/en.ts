@@ -428,54 +428,252 @@ export const en = {
     photo: 'Lodging photo',
   },
   logit: {
-    eyebrow: 'Professional experience',
+    breadcrumb: 'Work',
+    backAll: 'All projects',
+    eyebrow: 'Case study · Professional experience',
+    tagline: 'Foreign trade',
     h: {
-      l1: 'Logit.',
-      pre: 'Foreign trade, ',
-      em: 'made clear',
+      l1: 'Foreign trade,',
+      pre: '',
+      em: 'connected and clear',
       post: '.',
     },
-    lead: 'A foreign trade platform where I worked as a Full-Stack Engineer with Angular and .NET, leading front-end development.',
-    disclaimer:
-      'Logit is a company product, not my own. This page describes my role and contributions. The interface shown is illustrative and contains no real data.',
-    contribEyebrow: 'Contributions',
-    contribH: {
-      pre: 'Where I ',
-      em: 'contributed',
-      post: '.',
+    lead: 'Full-stack development and front-end leadership on a platform to manage imports, exports and foreign trade operations.',
+    cta1: 'Explore my contribution',
+    cta2: 'Talk about the project',
+    caption: 'Illustrative interface · Fictional data',
+    tracker: {
+      client: 'Andina Industrial',
+      steps: [
+        {
+          t: 'Order confirmed',
+          d: 'Oct 12, 2026',
+          state: 'done',
+        },
+        {
+          t: 'Shipped',
+          d: 'Oct 18, 2026',
+          state: 'done',
+        },
+        {
+          t: 'In transit',
+          d: 'Oct 22, 2026',
+          state: 'done',
+        },
+        {
+          t: 'Customs',
+          d: 'In progress',
+          state: 'active',
+        },
+        {
+          t: 'Delivery',
+          d: 'Pending',
+          state: 'todo',
+        },
+      ],
     },
-    contrib: [
+    facts: [
+      {
+        ic: 'user',
+        k: 'My role',
+        v: 'Full-stack · Front-end leadership',
+      },
       {
         ic: 'code',
-        t: 'Full-stack development',
-        d: 'Features across Angular interfaces and .NET services.',
+        k: 'Technologies',
+        v: 'Angular · .NET · TypeScript · C#',
       },
       {
-        ic: 'users',
-        t: 'Front-end leadership',
-        d: 'Technical direction, conventions and reviews for the front-end team.',
+        ic: 'database',
+        k: 'Context',
+        v: 'B2B foreign trade',
       },
       {
-        ic: 'layers',
-        t: 'Design system',
-        d: 'Co-created a reusable design system for consistent interfaces.',
-      },
-      {
-        ic: 'globe',
-        t: 'Internationalization',
-        d: 'Interfaces prepared for multiple languages.',
-      },
-      {
-        ic: 'window',
-        t: 'Business interfaces',
-        d: 'Screens for complex operational workflows.',
-      },
-      {
-        ic: 'shield',
-        t: 'Quality & traceability',
-        d: 'Contributions to testing, reviews and traceable decisions.',
+        ic: 'chart',
+        k: 'Scope',
+        v: 'Interface, services and quality',
       },
     ],
+    factsNote: 'Company product. This case describes my participation and contributions.',
+    tabs: ['Context', 'My contribution', 'Technical decisions', 'Learnings'],
+    context: {
+      eyebrow: '01 / The context',
+      h: {
+        l1: 'Many operations.',
+        pre: '',
+        em: 'One coherent experience.',
+        post: '',
+      },
+      text: 'The platform brings together foreign trade processes and related catalogs. The challenge was to turn that complexity into clear interfaces and a maintainable development base.',
+      items: [
+        {
+          ic: 'box',
+          t: 'Imports and exports',
+          d: 'Operations management, shipment tracking and customs processes.',
+        },
+        {
+          ic: 'file',
+          t: 'Purchase orders',
+          d: 'Creation, tracking and control of orders tied to each operation.',
+        },
+        {
+          ic: 'grid',
+          t: 'Products and catalogs',
+          d: 'Management of products, categories and catalogs linked to foreign trade.',
+        },
+        {
+          ic: 'users',
+          t: 'Customers and suppliers',
+          d: 'Registration and administration of customers, suppliers and their key data.',
+        },
+        {
+          ic: 'building2',
+          t: 'Contacts and branches',
+          d: 'Management of contacts and branches across different locations.',
+        },
+        {
+          ic: 'settings',
+          t: 'Settings and permissions',
+          d: 'System configuration, parameters and role and permission management.',
+        },
+      ],
+    },
+    contribution: {
+      eyebrow: '02 / My participation',
+      h: {
+        l1: 'From development to',
+        pre: 'team ',
+        em: 'decisions',
+        post: '.',
+      },
+      featured: {
+        n: '01',
+        ic: 'laptop',
+        t: 'Front-end leadership',
+        d: 'Interface architecture, conventions, code reviews and support for the team.',
+      },
+      list: [
+        {
+          n: '02',
+          ic: 'code',
+          t: 'Full-stack development',
+          d: 'Angular interfaces and contributions to .NET services.',
+        },
+        {
+          n: '03',
+          ic: 'layers',
+          t: 'Shared design system',
+          d: 'Co-creation of reusable components, variables and patterns.',
+        },
+        {
+          n: '04',
+          ic: 'network',
+          t: 'Business flows',
+          d: 'Forms, catalogs and connected operations.',
+        },
+      ],
+    },
+    decisions: {
+      eyebrow: '03 / Technical decisions',
+      h: {
+        l1: 'A foundation built to',
+        pre: 'grow ',
+        em: 'with the product',
+        post: '.',
+      },
+      sub: 'Complexity is also solved in the architecture, consistency and the team’s work.',
+      figCaption: 'Conceptual view of an operational flow for creating a new import. Fictional data.',
+      figAlt:
+        'Illustrative Logit screen for creating a new import: general data, supplier, incoterm, ports and product list',
+      items: [
+        {
+          n: '01',
+          t: 'Reactive forms and flows.',
+          sub: 'Validation, catalog loading, filters, pagination and shared CRUD patterns.',
+          body: 'I designed and led the implementation of reactive forms in Angular, with real-time validation, dynamic catalog loading, filters and pagination. We established reusable patterns for the platform’s main flows, keeping a consistent experience aligned with the design system.',
+        },
+        {
+          n: '02',
+          t: 'Modular architecture.',
+          sub: 'Components, services and conventions to keep a consistent base.',
+          body: 'I co-created the front-end architecture with Angular, defining modules, components, services and code conventions. This structure made teamwork easier, enabled feature reuse and let the product evolve across multiple fronts.',
+        },
+      ],
+      cards: [
+        {
+          ic: 'lock',
+          t: 'Access and permissions',
+          d: 'Authentication and granular role and permission checks, aligned with the platform’s different profiles.',
+        },
+        {
+          ic: 'globe',
+          t: 'Internationalization',
+          d: 'Shared translations and criteria for a multilingual interface, considering multiple locales, date, currency and unit formats.',
+        },
+        {
+          ic: 'file',
+          t: 'Audit and traceability',
+          d: 'Action logging and support for error diagnosis, with structured and observable information in key modules.',
+        },
+        {
+          ic: 'code',
+          t: 'Backend contributions',
+          d: '.NET services, Entity Framework and Clean Architecture, DDD and CQRS patterns, collaborating on business logic and validation.',
+        },
+      ],
+      system: {
+        t: 'Design system',
+        chips: ['Tokens', 'SCSS', 'Components', 'Layouts', 'Consistency'],
+        d: 'I co-created a design system with centralized variables, reusable components and usage guidelines to keep the experience consistent across the platform.',
+      },
+    },
+    how: {
+      eyebrow: 'How I worked',
+      lines: ['Technical judgment, collaboration', 'and continuous improvement.'],
+      steps: [
+        {
+          n: '01',
+          t: 'Understand the flow',
+          d: 'Turn business needs into clear interactions.',
+        },
+        {
+          n: '02',
+          t: 'Build as a team',
+          d: 'Implement, review and share decisions.',
+        },
+        {
+          n: '03',
+          t: 'Care for quality',
+          d: 'Validate behavior and keep traceability.',
+        },
+      ],
+      ai: 'AI tools as development support, together with technical review and my own judgment.',
+    },
+    learnings: {
+      eyebrow: '04 / Learnings',
+      lines: ['What this experience', 'added to how I build.'],
+      items: [
+        {
+          t: 'Think in systems, not just screens.',
+          d: 'Understand the platform’s full context, its users and its dependencies.',
+        },
+        {
+          t: 'Make team decisions explicit.',
+          d: 'Document criteria, agree on conventions and make collaboration easier.',
+        },
+        {
+          t: 'Connect design, business and maintainability.',
+          d: 'Look for solutions that balance user experience, business goals and a sustainable technical base.',
+        },
+      ],
+      closing:
+        'This experience strengthened my ability to take responsibility for the interface and collaborate on a complex business platform.',
+      cta: {
+        t: 'Looking for this approach for your team or product?',
+        primary: 'Let’s talk',
+        secondary: 'Back to portfolio',
+      },
+    },
   },
   about: {
     eyebrow: 'About me',
@@ -832,9 +1030,12 @@ export const en = {
   alt: {
     hero: 'Mountain landscape in Colombia with a hiker looking over the valleys',
     camp: 'A person resting next to a tent above a valley of clouds',
-    fieldops: 'FieldOps operations dashboard: today’s jobs, items that need attention, technician availability and service performance',
-    bosvia: 'Bosvia operations panel for a property: today’s arrivals and departures, availability calendar, recent bookings and direct sales',
-    logit: 'Illustrative foreign trade operations center: active operations, shipments in transit, document control and shipment tracking',
+    fieldops:
+      'FieldOps operations dashboard: today’s jobs, items that need attention, technician availability and service performance',
+    bosvia:
+      'Bosvia operations panel for a property: today’s arrivals and departures, availability calendar, recent bookings and direct sales',
+    logit:
+      'Illustrative foreign trade operations center: active operations, shipments in transit, document control and shipment tracking',
     aboutCamp: 'A hiker with an orange backpack sitting on a rock ridge, looking out over forested mountains',
     builder: 'A hiker in a red jacket and backpack standing on a cliff edge at golden hour',
   },

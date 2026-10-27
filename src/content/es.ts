@@ -430,54 +430,252 @@ export const es: Dictionary = {
     photo: 'Foto del alojamiento',
   },
   logit: {
-    eyebrow: 'Experiencia profesional',
+    breadcrumb: 'Trabajo',
+    backAll: 'Todos los proyectos',
+    eyebrow: 'Caso de estudio · Experiencia profesional',
+    tagline: 'Foreign trade',
     h: {
-      l1: 'Logit.',
-      pre: 'Comercio exterior, ',
-      em: 'más claro',
+      l1: 'Comercio exterior,',
+      pre: '',
+      em: 'conectado y claro',
       post: '.',
     },
-    lead: 'Una plataforma de comercio exterior en la que trabajé como ingeniero Full-Stack con Angular y .NET, liderando el desarrollo frontend.',
-    disclaimer:
-      'Logit es un producto de la empresa, no mío. Esta página describe mi rol y mis aportes. La interfaz mostrada es ilustrativa y no contiene datos reales.',
-    contribEyebrow: 'Aportes',
-    contribH: {
-      pre: 'Dónde ',
-      em: 'contribuí',
-      post: '.',
+    lead: 'Desarrollo full-stack y liderazgo frontend en una plataforma para gestionar importaciones, exportaciones y operaciones de comercio exterior.',
+    cta1: 'Explorar mi aporte',
+    cta2: 'Conversar sobre el proyecto',
+    caption: 'Interfaz ilustrativa · Datos ficticios',
+    tracker: {
+      client: 'Andina Industrial',
+      steps: [
+        {
+          t: 'Orden confirmada',
+          d: '12 oct 2026',
+          state: 'done',
+        },
+        {
+          t: 'Embarcado',
+          d: '18 oct 2026',
+          state: 'done',
+        },
+        {
+          t: 'En tránsito',
+          d: '22 oct 2026',
+          state: 'done',
+        },
+        {
+          t: 'Aduana',
+          d: 'En proceso',
+          state: 'active',
+        },
+        {
+          t: 'Entrega',
+          d: 'Pendiente',
+          state: 'todo',
+        },
+      ],
     },
-    contrib: [
+    facts: [
+      {
+        ic: 'user',
+        k: 'Mi rol',
+        v: 'Full-stack · Liderazgo frontend',
+      },
       {
         ic: 'code',
-        t: 'Desarrollo full-stack',
-        d: 'Funcionalidades entre interfaces Angular y servicios .NET.',
+        k: 'Tecnologías',
+        v: 'Angular · .NET · TypeScript · C#',
       },
       {
-        ic: 'users',
-        t: 'Liderazgo frontend',
-        d: 'Dirección técnica, convenciones y revisiones para el equipo frontend.',
+        ic: 'database',
+        k: 'Contexto',
+        v: 'Comercio exterior B2B',
       },
       {
-        ic: 'layers',
-        t: 'Sistema de diseño',
-        d: 'Co-creé un sistema de diseño reutilizable para interfaces consistentes.',
-      },
-      {
-        ic: 'globe',
-        t: 'Internacionalización',
-        d: 'Interfaces preparadas para varios idiomas.',
-      },
-      {
-        ic: 'window',
-        t: 'Interfaces de negocio',
-        d: 'Pantallas para flujos operativos complejos.',
-      },
-      {
-        ic: 'shield',
-        t: 'Calidad y trazabilidad',
-        d: 'Aportes a pruebas, revisiones y decisiones trazables.',
+        ic: 'chart',
+        k: 'Alcance',
+        v: 'Interfaz, servicios y calidad',
       },
     ],
+    factsNote: 'Producto de la empresa. Este caso describe mi participación y aportes.',
+    tabs: ['Contexto', 'Mi aporte', 'Decisiones técnicas', 'Aprendizajes'],
+    context: {
+      eyebrow: '01 / El contexto',
+      h: {
+        l1: 'Muchas operaciones.',
+        pre: '',
+        em: 'Una experiencia coherente.',
+        post: '',
+      },
+      text: 'La plataforma reúne procesos de comercio exterior y catálogos relacionados. El reto era traducir esa complejidad en interfaces claras y una base de desarrollo mantenible.',
+      items: [
+        {
+          ic: 'box',
+          t: 'Importaciones y exportaciones',
+          d: 'Gestión de operaciones, seguimiento de embarques y procesos aduaneros.',
+        },
+        {
+          ic: 'file',
+          t: 'Órdenes de compra',
+          d: 'Creación, seguimiento y control de órdenes relacionadas con cada operación.',
+        },
+        {
+          ic: 'grid',
+          t: 'Productos y catálogos',
+          d: 'Gestión de productos, categorías y catálogos asociados al comercio exterior.',
+        },
+        {
+          ic: 'users',
+          t: 'Clientes y proveedores',
+          d: 'Registro y administración de clientes, proveedores y sus datos clave.',
+        },
+        {
+          ic: 'building2',
+          t: 'Contactos y sucursales',
+          d: 'Gestión de contactos y sucursales en diferentes ubicaciones.',
+        },
+        {
+          ic: 'settings',
+          t: 'Ajustes y permisos',
+          d: 'Configuración del sistema, parámetros y gestión de roles y permisos.',
+        },
+      ],
+    },
+    contribution: {
+      eyebrow: '02 / Mi participación',
+      h: {
+        l1: 'Del desarrollo a',
+        pre: 'las ',
+        em: 'decisiones de equipo',
+        post: '.',
+      },
+      featured: {
+        n: '01',
+        ic: 'laptop',
+        t: 'Liderazgo frontend',
+        d: 'Arquitectura de interfaz, convenciones, revisiones de código y acompañamiento al equipo.',
+      },
+      list: [
+        {
+          n: '02',
+          ic: 'code',
+          t: 'Desarrollo full-stack',
+          d: 'Interfaces Angular y contribuciones a servicios .NET.',
+        },
+        {
+          n: '03',
+          ic: 'layers',
+          t: 'Sistema de diseño compartido',
+          d: 'Co-creación de componentes, variables y patrones reutilizables.',
+        },
+        {
+          n: '04',
+          ic: 'network',
+          t: 'Flujos de negocio',
+          d: 'Formularios, catálogos y operaciones conectadas.',
+        },
+      ],
+    },
+    decisions: {
+      eyebrow: '03 / Decisiones técnicas',
+      h: {
+        l1: 'Una base pensada para',
+        pre: 'crecer ',
+        em: 'con el producto',
+        post: '.',
+      },
+      sub: 'La complejidad también se resuelve en la arquitectura, la consistencia y el trabajo del equipo.',
+      figCaption: 'Vista conceptual de un flujo operativo en la creación de una nueva importación. Datos ficticios.',
+      figAlt:
+        'Pantalla ilustrativa de Logit para crear una nueva importación: datos generales, proveedor, incoterm, puertos y lista de productos',
+      items: [
+        {
+          n: '01',
+          t: 'Formularios y flujos reactivos.',
+          sub: 'Validaciones, carga de catálogos, filtros, paginación y patrones CRUD compartidos.',
+          body: 'Diseñé y lideré la implementación de formularios reactivos en Angular, con validaciones en tiempo real, carga dinámica de catálogos, filtros y paginación. Establecimos patrones reutilizables para los flujos principales de la plataforma, manteniendo una experiencia consistente y alineada con el sistema de diseño.',
+        },
+        {
+          n: '02',
+          t: 'Arquitectura modular.',
+          sub: 'Componentes, servicios y convenciones para mantener una base consistente.',
+          body: 'Co-creé la arquitectura de frontend con Angular, definiendo módulos, componentes, servicios y convenciones de código. Esta estructura facilitó el trabajo en equipo, la reutilización de funcionalidades y la evolución del producto en múltiples frentes.',
+        },
+      ],
+      cards: [
+        {
+          ic: 'lock',
+          t: 'Acceso y permisos',
+          d: 'Autenticación y verificación granular de roles y permisos, alineada con los distintos perfiles de la plataforma.',
+        },
+        {
+          ic: 'globe',
+          t: 'Internacionalización',
+          d: 'Traducciones y criterios compartidos para una interfaz multilingüe, considerando múltiples locales, formatos de fecha, moneda y unidades.',
+        },
+        {
+          ic: 'file',
+          t: 'Auditoría y trazabilidad',
+          d: 'Registro de acciones y apoyo al diagnóstico de errores, con información estructurada y observable en los módulos clave.',
+        },
+        {
+          ic: 'code',
+          t: 'Contribuciones backend',
+          d: 'Servicios .NET, Entity Framework y patrones de Clean Architecture, DDD y CQRS, colaborando en la implementación de lógica de negocio y validaciones.',
+        },
+      ],
+      system: {
+        t: 'Sistema de diseño',
+        chips: ['Tokens', 'SCSS', 'Componentes', 'Layouts', 'Consistencia'],
+        d: 'Co-creé un sistema de diseño con variables centralizadas, componentes reutilizables y guías de uso para mantener una experiencia consistente en toda la plataforma.',
+      },
+    },
+    how: {
+      eyebrow: 'Cómo trabajé',
+      lines: ['Criterio técnico, colaboración', 'y mejora continua.'],
+      steps: [
+        {
+          n: '01',
+          t: 'Entender el flujo',
+          d: 'Traducir necesidades de negocio en interacciones claras.',
+        },
+        {
+          n: '02',
+          t: 'Construir en equipo',
+          d: 'Implementar, revisar y compartir decisiones.',
+        },
+        {
+          n: '03',
+          t: 'Cuidar la calidad',
+          d: 'Validar comportamientos y mantener trazabilidad.',
+        },
+      ],
+      ai: 'Herramientas de IA como apoyo al desarrollo, junto con revisión técnica y criterio propio.',
+    },
+    learnings: {
+      eyebrow: '04 / Aprendizajes',
+      lines: ['Lo que esta experiencia', 'aportó a mi forma de construir.'],
+      items: [
+        {
+          t: 'Pensar en sistemas, además de pantallas.',
+          d: 'Entender el contexto completo de la plataforma, sus usuarios y sus dependencias.',
+        },
+        {
+          t: 'Hacer explícitas las decisiones del equipo.',
+          d: 'Documentar criterios, acordar convenciones y facilitar la colaboración.',
+        },
+        {
+          t: 'Conectar diseño, negocio y mantenibilidad.',
+          d: 'Buscar soluciones que equilibren experiencia de usuario, objetivos del negocio y una base técnica sostenible.',
+        },
+      ],
+      closing:
+        'Esta experiencia fortaleció mi capacidad para asumir responsabilidad sobre la interfaz y colaborar en una plataforma de negocio compleja.',
+      cta: {
+        t: '¿Buscas este enfoque para tu equipo o producto?',
+        primary: 'Hablemos',
+        secondary: 'Volver al portafolio',
+      },
+    },
   },
   about: {
     eyebrow: 'Sobre mí',
@@ -834,9 +1032,12 @@ export const es: Dictionary = {
   alt: {
     hero: 'Paisaje de montañas en Colombia con un caminante mirando los valles',
     camp: 'Una persona descansando junto a una carpa sobre un valle de nubes',
-    fieldops: 'Panel operativo de FieldOps: trabajos del día, puntos que requieren atención, disponibilidad de técnicos y desempeño del servicio',
-    bosvia: 'Panel operativo de Bosvia para un alojamiento: llegadas y salidas de hoy, calendario de disponibilidad, reservas recientes y ventas directas',
-    logit: 'Centro de operaciones de comercio exterior ilustrativo: operaciones activas, embarques en tránsito, control documental y seguimiento de embarques',
+    fieldops:
+      'Panel operativo de FieldOps: trabajos del día, puntos que requieren atención, disponibilidad de técnicos y desempeño del servicio',
+    bosvia:
+      'Panel operativo de Bosvia para un alojamiento: llegadas y salidas de hoy, calendario de disponibilidad, reservas recientes y ventas directas',
+    logit:
+      'Centro de operaciones de comercio exterior ilustrativo: operaciones activas, embarques en tránsito, control documental y seguimiento de embarques',
     aboutCamp: 'Un caminante con mochila naranja sentado en un risco, mirando montañas con bosque',
     builder: 'Un caminante con chaqueta roja y mochila de pie en el borde de un precipicio al atardecer',
   },
