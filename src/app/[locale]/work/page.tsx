@@ -51,7 +51,7 @@ export default async function WorkPage() {
             {fieldops.role}
           </p>
           <div className="flex flex-wrap items-center gap-[18px]">
-            <ButtonLink href={href(locale, 'fieldops')} size="cardLg" arrow>
+            <ButtonLink href="https://fieldops-co.vercel.app/en" size="cardLg" arrow>
               {t.common.explore}
             </ButtonLink>
             <TextLink href={site.fieldops.repoUrl} tone="ink" arrow>

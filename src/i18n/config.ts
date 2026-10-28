@@ -18,7 +18,6 @@ export const otherLocale = (locale: Locale): Locale => (locale === 'en' ? 'es' :
 export const routes = {
   home: '',
   work: 'work',
-  fieldops: 'work/fieldops',
   logit: 'work/logit',
   about: 'about',
   skills: 'skills',
