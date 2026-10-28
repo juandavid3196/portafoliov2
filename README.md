@@ -2,8 +2,6 @@
 
 Bilingual (EN default / ES) portfolio built with Next.js 16 (App Router), React 19, TypeScript (strict) and Tailwind CSS v4. Nine pages per language, statically generated. No database, no auth.
 
-The design reference lives in `design_handoff_portfolio/` (prototype + spec). It is not application code.
-
 ## Run
 
 ```bash
