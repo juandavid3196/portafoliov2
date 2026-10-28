@@ -17,8 +17,7 @@ const label = 'font-sans text-[11px] uppercase tracking-[.16em] text-eyebrow';
 const field =
   'w-full rounded-lg border border-[#d9ddd6] bg-white px-4 font-serif text-[17px] text-ink placeholder:text-[#9aa19b] focus-visible:border-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/25';
 
-// No backend of our own: the message is posted to FormSubmit, which forwards it to `email`.
-// (First delivery requires confirming the activation email FormSubmit sends to that address.)
+// The message is posted to /api/contact, which emails it to the site address.
 export function ContactForm({ form, email, noEmail }: ContactFormProps) {
   const [topic, setTopic] = useState(form.topics[0].k);
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -31,21 +30,19 @@ export function ContactForm({ form, email, noEmail }: ContactFormProps) {
     const data = new FormData(formEl);
     setStatus('sending');
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${email}`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        signal: AbortSignal.timeout(15000),
         body: JSON.stringify({
-          _subject: form.subjects[topic as keyof typeof form.subjects],
-          _replyto: String(data.get('email') ?? '').trim(),
-          _captcha: 'false',
-          name: String(data.get('name') ?? '').trim(),
-          email: String(data.get('email') ?? '').trim(),
-          company: String(data.get('company') ?? '').trim(),
-          message: String(data.get('message') ?? '').trim(),
+          subject: form.subjects[topic as keyof typeof form.subjects],
+          name: String(data.get('name') ?? ''),
+          email: String(data.get('email') ?? ''),
+          company: String(data.get('company') ?? ''),
+          message: String(data.get('message') ?? ''),
         }),
       });
-      const result = await res.json().catch(() => null);
-      if (!res.ok || result?.success === 'false' || result?.success === false) throw new Error('send failed');
+      if (!res.ok) throw new Error('send failed');
       formEl.reset();
       setStatus('sent');
     } catch {
