@@ -667,7 +667,7 @@ export const en = {
       post: '.',
     },
     cv: 'Download CV',
-    cvMissing: 'CV available on request',
+    cvLangs: { en: 'English', es: 'Español' },
     exp: [
       {
         ic: 'box',

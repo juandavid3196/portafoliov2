@@ -86,13 +86,30 @@ export default async function AboutPage() {
                 className="text-[clamp(32px,3.9vw,45px)] leading-none tracking-[-.04em]"
               />
             </div>
-            {site.cvUrl ? (
-              <TextLink href={site.cvUrl} arrow>
+            <div className="flex flex-col gap-2.5">
+              <p className="m-0 flex items-center gap-3 font-sans text-[12px] uppercase tracking-[.22em] text-eyebrow">
+                <Icon name="file" size={26} className="text-brand" />
                 {a.cv}
-              </TextLink>
-            ) : (
-              <span className="font-serif text-[17px] text-ink-4">{a.cvMissing}</span>
-            )}
+              </p>
+              <div className="flex items-center gap-5">
+                {(['en', 'es'] as const).map((l, i) => (
+                  <div key={l} className="flex items-center gap-5">
+                    {i > 0 ? <span aria-hidden="true" className="h-7 w-px bg-ink" /> : null}
+                    <a
+                      href={site.cv[l]}
+                      download
+                      className="flex flex-col gap-1.5 font-serif text-[20px] text-brand transition-colors duration-200 hover:text-brand-link"
+                    >
+                      <span className="flex items-center gap-2.5 border-b border-brand pb-[3px]">
+                        {a.cvLangs[l]}
+                        <Icon name="download" size={20} strokeWidth={1.8} />
+                      </span>
+                      <span className="font-sans text-[11px] uppercase tracking-[.22em] text-muted">PDF</span>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
           {/* No dates: none are confirmed. */}
           <ol className="relative m-0 ml-[clamp(0px,8.6vw,100px)] flex list-none flex-col gap-6 p-0">

@@ -12,6 +12,7 @@ import {
   CircleCheck,
   Code,
   Database,
+  Download,
   FilePenLine,
   FileText,
   GitBranch,
@@ -96,6 +97,7 @@ const icons: Record<string, LucideIcon> = {
   laptop: Laptop,
   filepen: FilePenLine,
   settings: Settings,
+  download: Download,
 };
 
 type IconProps = {

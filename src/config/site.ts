@@ -13,7 +13,10 @@ export const site = {
   whatsapp: '573026635805', // digits only, international format (e.g. 573001234567); empty → hide
   github: 'https://github.com/juandavid3196',
   githubHandle: 'juandavid3196',
-  cvUrl: '', // empty → "CV available on request"
+  cv: {
+    en: '/cv/Juan_David_Rios_Full_Stack_Resume_EN.pdf',
+    es: '/cv/Juan_David_Rios_CV_Full_Stack_ES.pdf',
+  },
   fieldops: {
     repoUrl: 'https://github.com/juandavid3196/fieldops',
     demoUrl: '',

@@ -669,7 +669,7 @@ export const es: Dictionary = {
       post: '.',
     },
     cv: 'Descargar CV',
-    cvMissing: 'CV disponible a solicitud',
+    cvLangs: { en: 'English', es: 'Español' },
     exp: [
       {
         ic: 'box',
