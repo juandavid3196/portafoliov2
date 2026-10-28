@@ -150,7 +150,7 @@ export function ContactForm({ form, email, noEmail }: ContactFormProps) {
       {status === 'sent' ? (
         <div
           role="status"
-          className="toast-in fixed bottom-6 left-1/2 z-50 flex w-[calc(100%-32px)] max-w-[420px] -translate-x-1/2 items-center gap-3 rounded-xl bg-brand px-5 py-4 font-serif text-[17px] leading-[1.3] text-ivory shadow-[0_12px_32px_rgba(8,77,70,.28)]"
+          className="toast-in fixed inset-x-4 bottom-6 z-50 mx-auto flex max-w-[420px] items-center gap-3 rounded-xl bg-brand px-5 py-4 font-serif text-[17px] leading-[1.3] text-ivory shadow-[0_12px_32px_rgba(8,77,70,.28)]"
         >
           <Icon name="check" size={24} strokeWidth={1.6} className="flex-none" />
           <span className="flex-1">{form.sent}</span>
