@@ -976,6 +976,7 @@ export const en = {
       send: 'Send message',
       note: 'Your details will only be used to reply to your message.',
       sending: 'Sending…',
+      close: 'Close',
       sent: 'Message sent. Thank you, I’ll get back to you soon.',
       error: 'The message could not be sent. Please write to me directly at'
     },

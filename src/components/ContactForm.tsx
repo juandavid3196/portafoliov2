@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Dictionary } from '@/content/en';
 import { Icon } from './Icon';
 
@@ -22,6 +22,13 @@ export function ContactForm({ form, email, noEmail }: ContactFormProps) {
   const [topic, setTopic] = useState(form.topics[0].k);
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const enabled = Boolean(email);
+
+  // The success toast dismisses itself.
+  useEffect(() => {
+    if (status !== 'sent') return;
+    const id = setTimeout(() => setStatus('idle'), 5000);
+    return () => clearTimeout(id);
+  }, [status]);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -124,9 +131,7 @@ export function ContactForm({ form, email, noEmail }: ContactFormProps) {
 
       {enabled ? (
         <p className="m-0 text-center font-serif text-[14px] text-muted" aria-live="polite">
-          {status === 'sent' ? (
-            form.sent
-          ) : status === 'error' ? (
+          {status === 'error' ? (
             <>
               {form.error}{' '}
               <a href={`mailto:${email}`} className="underline">
@@ -141,6 +146,24 @@ export function ContactForm({ form, email, noEmail }: ContactFormProps) {
       ) : (
         <p className="m-0 text-center font-serif text-[15px] leading-[1.4] text-ink-4">{noEmail}</p>
       )}
+
+      {status === 'sent' ? (
+        <div
+          role="status"
+          className="toast-in fixed bottom-6 left-1/2 z-50 flex w-[calc(100%-32px)] max-w-[420px] -translate-x-1/2 items-center gap-3 rounded-xl bg-brand px-5 py-4 font-serif text-[17px] leading-[1.3] text-ivory shadow-[0_12px_32px_rgba(8,77,70,.28)]"
+        >
+          <Icon name="check" size={24} strokeWidth={1.6} className="flex-none" />
+          <span className="flex-1">{form.sent}</span>
+          <button
+            type="button"
+            onClick={() => setStatus('idle')}
+            aria-label={form.close}
+            className="flex-none cursor-pointer text-[22px] leading-none opacity-80 hover:opacity-100"
+          >
+            ×
+          </button>
+        </div>
+      ) : null}
     </form>
   );
 }

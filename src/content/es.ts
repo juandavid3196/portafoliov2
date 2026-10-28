@@ -978,6 +978,7 @@ export const es: Dictionary = {
       send: 'Enviar mensaje',
       note: 'Tus datos solo se usarán para responder a tu mensaje.',
       sending: 'Enviando…',
+      close: 'Cerrar',
       sent: 'Mensaje enviado. Gracias, te responderé pronto.',
       error: 'No se pudo enviar el mensaje. Escríbeme directamente a',
     },
