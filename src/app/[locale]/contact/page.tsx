@@ -130,7 +130,7 @@ export default async function ContactPage() {
           <p className="m-0 mt-6 font-serif text-[clamp(16px,1.4vw,16px)] text-muted">{c.open}</p>
         </div>
 
-        {/* Message form (mailto, no backend) */}
+        {/* Message form (FormSubmit) */}
         <div className="rounded-2xl border border-[#dfe3dd] bg-[#fdfdfb] p-[clamp(22px,2.9vw,34px)]">
           <h2 className="m-0 font-serif text-[clamp(28px,3vw,35px)] font-normal leading-[1.1] tracking-[-.01em]">
             {c.form.h}

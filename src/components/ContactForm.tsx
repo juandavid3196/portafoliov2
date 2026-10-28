@@ -17,27 +17,40 @@ const label = 'font-sans text-[11px] uppercase tracking-[.16em] text-eyebrow';
 const field =
   'w-full rounded-lg border border-[#d9ddd6] bg-white px-4 font-serif text-[17px] text-ink placeholder:text-[#9aa19b] focus-visible:border-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/25';
 
-// There is no backend: submitting opens the visitor's email app with the message prefilled
-// (mailto:). Nothing is "sent" from here, so no success state is faked.
+// No backend of our own: the message is posted to FormSubmit, which forwards it to `email`.
+// (First delivery requires confirming the activation email FormSubmit sends to that address.)
 export function ContactForm({ form, email, noEmail }: ContactFormProps) {
   const [topic, setTopic] = useState(form.topics[0].k);
-  const [opened, setOpened] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const enabled = Boolean(email);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!enabled) return;
-    const data = new FormData(e.currentTarget);
-    const company = String(data.get('company') ?? '').trim();
-    const subject = form.subjects[topic as keyof typeof form.subjects];
-    const lines = [
-      `${form.name}: ${String(data.get('name') ?? '').trim()}`,
-      `${form.email}: ${String(data.get('email') ?? '').trim()}`,
-    ];
-    if (company) lines.push(`${form.company.replace(/\s*\(.*\)$/, '')}: ${company}`);
-    const body = [...lines, '', String(data.get('message') ?? '').trim()].join('\n');
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setOpened(true);
+    if (!enabled || status === 'sending') return;
+    const formEl = e.currentTarget;
+    const data = new FormData(formEl);
+    setStatus('sending');
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${email}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: form.subjects[topic as keyof typeof form.subjects],
+          _replyto: String(data.get('email') ?? '').trim(),
+          _captcha: 'false',
+          name: String(data.get('name') ?? '').trim(),
+          email: String(data.get('email') ?? '').trim(),
+          company: String(data.get('company') ?? '').trim(),
+          message: String(data.get('message') ?? '').trim(),
+        }),
+      });
+      const result = await res.json().catch(() => null);
+      if (!res.ok || result?.success === 'false' || result?.success === false) throw new Error('send failed');
+      formEl.reset();
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
   }
 
   return (
@@ -104,27 +117,28 @@ export function ContactForm({ form, email, noEmail }: ContactFormProps) {
 
         <button
           type="submit"
+          disabled={status === 'sending'}
           className="inline-flex min-h-[50px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-lg bg-brand px-6 font-serif text-[18px] text-ivory transition-colors duration-200 hover:bg-brand-hover disabled:cursor-not-allowed"
         >
-          {form.send}
+          {status === 'sending' ? form.sending : form.send}
           <Icon name="arrow-up-right" size={17} strokeWidth={1.6} />
         </button>
       </fieldset>
 
       {enabled ? (
         <p className="m-0 text-center font-serif text-[14px] text-muted" aria-live="polite">
-          {opened ? (
+          {status === 'sent' ? (
+            form.sent
+          ) : status === 'error' ? (
             <>
-              {form.opened}{' '}
+              {form.error}{' '}
               <a href={`mailto:${email}`} className="underline">
                 {email}
               </a>
               .
             </>
           ) : (
-            <>
-              {form.mailNote} {form.note}
-            </>
+            form.note
           )}
         </p>
       ) : (

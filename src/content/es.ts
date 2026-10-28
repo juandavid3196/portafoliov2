@@ -977,8 +977,9 @@ export const es: Dictionary = {
       hint: 'Puedes escribir en español o en inglés.',
       send: 'Enviar mensaje',
       note: 'Tus datos solo se usarán para responder a tu mensaje.',
-      mailNote: 'Se abrirá tu aplicación de correo con el mensaje listo para enviar.',
-      opened: 'Si tu aplicación de correo no se abrió, escríbeme directamente a',
+      sending: 'Enviando…',
+      sent: 'Mensaje enviado. Gracias, te responderé pronto.',
+      error: 'No se pudo enviar el mensaje. Escríbeme directamente a',
     },
   },
   projects: {

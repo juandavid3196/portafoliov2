@@ -975,8 +975,9 @@ export const en = {
       hint: 'You can write in English or Spanish.',
       send: 'Send message',
       note: 'Your details will only be used to reply to your message.',
-      mailNote: 'Your email app will open with the message ready to send.',
-      opened: 'If your email app did not open, write to me directly at',
+      sending: 'Sending…',
+      sent: 'Message sent. Thank you, I’ll get back to you soon.',
+      error: 'The message could not be sent. Please write to me directly at'
     },
   },
   projects: {
