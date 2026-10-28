@@ -43,6 +43,7 @@ export function ContactForm({ form, email, noEmail }: ContactFormProps) {
         signal: AbortSignal.timeout(15000),
         body: JSON.stringify({
           subject: form.subjects[topic as keyof typeof form.subjects],
+          topic: form.topics.find((tp) => tp.k === topic)?.t ?? topic,
           name: String(data.get('name') ?? ''),
           email: String(data.get('email') ?? ''),
           company: String(data.get('company') ?? ''),
@@ -113,6 +114,13 @@ export function ContactForm({ form, email, noEmail }: ContactFormProps) {
             name="message"
             required
             rows={3}
+            onKeyDown={(e) => {
+              // Enter sends; Shift+Enter adds a new line (skipped while an IME is composing).
+              if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
+                e.preventDefault();
+                e.currentTarget.form?.requestSubmit();
+              }
+            }}
             placeholder={form.messagePh}
             className={`min-h-[88px] resize-y py-3 leading-[1.4] ${field}`}
           />

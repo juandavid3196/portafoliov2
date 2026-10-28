@@ -18,6 +18,7 @@ export async function POST(request: Request) {
   const name = clean(body?.name, 120);
   const email = clean(body?.email, 200);
   const company = clean(body?.company, 200);
+  const topic = clean(body?.topic, 60);
   const message = clean(body?.message, 5000);
   const subject = clean(body?.subject, 120) || 'Portfolio contact';
 
@@ -33,8 +34,8 @@ export async function POST(request: Request) {
       to: [site.email],
       reply_to: email,
       subject: `${subject} · ${name}`,
-      text: [`Name: ${name}`, `Email: ${email}`, ...(company ? [`Company: ${company}`] : []), '', message].join('\n'),
-      html: `<p><b>${escapeHtml(name)}</b> &lt;${escapeHtml(email)}&gt;${company ? `<br>${escapeHtml(company)}` : ''}</p><p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
+      text: [...(topic ? [`Topic: ${topic}`] : []), `Name: ${name}`, `Email: ${email}`, ...(company ? [`Company: ${company}`] : []), '', message].join('\n'),
+      html: `${topic ? `<p><b>Topic:</b> ${escapeHtml(topic)}</p>` : ''}<p><b>${escapeHtml(name)}</b> &lt;${escapeHtml(email)}&gt;${company ? `<br>${escapeHtml(company)}` : ''}</p><p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
     }),
   });
 
