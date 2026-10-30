@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { site } from '@/config/site';
-import { dictionaries, href, locales, type Locale, type RouteKey } from '@/i18n/config';
+import { defaultLocale, dictionaries, href, locales, type Locale, type RouteKey } from '@/i18n/config';
 
 // Served by src/app/opengraph-image.tsx. A page-level openGraph object replaces the parent's,
 // so the image is referenced explicitly instead of relying on the file convention merge.
@@ -17,7 +17,7 @@ export function buildMetadata(locale: Locale, key: RouteKey, description: string
 
   const languages: Record<string, string> = {};
   for (const l of locales) languages[l] = href(l, key);
-  languages['x-default'] = href('en', key);
+  languages['x-default'] = href(defaultLocale, key);
 
   return {
     title: { absolute: title },

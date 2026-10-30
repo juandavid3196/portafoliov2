@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { defaultLocale, hasLocale } from '@/i18n/config';
 
 // Next.js 16 renamed middleware to proxy. Redirects "/" and any path without
-// a locale prefix to the default locale ("/work" → "/en/work").
+// a locale prefix to the default locale ("/work" → "/es/work").
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const first = pathname.split('/')[1] ?? '';

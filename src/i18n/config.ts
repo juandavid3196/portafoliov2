@@ -4,7 +4,7 @@ import type { Dictionary } from '@/content/en';
 
 export const locales = ['en', 'es'] as const;
 export type Locale = (typeof locales)[number];
-export const defaultLocale: Locale = 'en';
+export const defaultLocale: Locale = 'es';
 
 export const dictionaries: Record<Locale, Dictionary> = { en, es };
 
